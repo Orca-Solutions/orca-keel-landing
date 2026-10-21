@@ -1,0 +1,77 @@
+/* Orca brand tokens · draft 0.2 · 2026-10-21
+   Harbor is the default theme. Add data-theme="workshop" on <html> for the alternative. */
+
+:root {
+  /* Harbor */
+  --orca-paper:   #F0EEE7;  /* ground: the studio's Chalk */
+  --orca-white:   #FFFFFF;  /* surface */
+  --orca-ink:     #171A18;  /* text, the mark, the box: the studio's Ink */
+  --orca-harbor:  #1E5A66;  /* accent: one emphasis per screen */
+  --orca-stone:   #6B6760;  /* secondary text */
+  --orca-linen:   #E2DFD6;  /* rules */
+  --orca-amber:   #C8862B;  /* the listening light only */
+  --orca-paper-on-ink: #CFCBC2;
+  --orca-vermilion: #E65032;  /* the studio's accent; not on products */
+
+  /* semantic */
+  --bg:        var(--orca-paper);
+  --surface:   var(--orca-white);
+  --fg:        var(--orca-ink);
+  --fg-2:      var(--orca-stone);
+  --accent:    var(--orca-harbor);
+  --rule:      var(--orca-linen);
+  --signal:    var(--orca-amber);
+
+  /* type */
+  --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-record:  'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* scale (px) */
+  --display-1: 56px; --display-2: 40px; --display-3: 32px; --title: 24px;
+  --lead: 21px; --body: 17px; --ui: 16px; --ui-small: 14px; --caption: 13px; --label: 13px;
+  --tracking-display: -0.02em; --tracking-label: 0.08em;
+
+  /* space and radius */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-7: 32px; --space-8: 48px; --space-9: 64px; --space-10: 80px;
+  --gutter: 24px; --content-max: 1120px;
+  --radius-control: 6px; --radius-card: 8px; --radius-panel: 10px;
+}
+
+:root[data-theme="workshop"] {
+  --orca-paper:  #FFFFFF;
+  --orca-white:  #FFFFFF;
+  --orca-ink:    #111111;
+  --orca-harbor: #111111;
+  --orca-stone:  #6A6A6A;
+  --orca-linen:  #E6E6E6;
+  --orca-amber:  #D8441C;
+  --orca-paper-on-ink: #CFCFCF;
+}
+
+/* The installer's layer: Ink ground, Paper text */
+.orca-dark {
+  --bg: var(--orca-ink);
+  --surface: #2A2A2A;
+  --fg: var(--orca-paper);
+  --fg-2: var(--orca-paper-on-ink);
+  --rule: #3D3D3D;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Base */
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-product); }
+a { color: var(--accent); }
+h1, h2, h3 { font-family: var(--font-product); font-weight: 600; letter-spacing: var(--tracking-display); line-height: 1.05; margin: 0; }
+h1 { font-size: var(--display-1); letter-spacing: -0.025em; line-height: 1.02; }
+h2 { font-size: var(--display-2); }
+h3 { font-size: var(--title); line-height: 1.15; }
+.lead { font-family: var(--font-record); font-size: var(--lead); line-height: 1.4; }
+.record, .body { font-family: var(--font-record); font-size: var(--body); line-height: 1.45; }
+.label { font-size: var(--label); font-weight: 500; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-2); }
+.caption { font-size: var(--caption); color: var(--fg-2); }
+.button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--fg); color: var(--bg); border-radius: var(--radius-control); font-weight: 500; font-size: var(--ui); text-decoration: none; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); }
+.light { width: 6px; height: 6px; border-radius: 3px; background: var(--signal); }
