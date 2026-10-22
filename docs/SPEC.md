@@ -10,9 +10,9 @@ One static page, `site/index.html`, for the family household, with the installer
 | Hero | "The household computer" label, the one-line claim, the sub, a link to where it stands, the flat Paper panel with the box as a dark slab and one amber dot | Brief §3, §6, §7 imagery placeholder |
 | How it works | The three claims: it keeps the record, it does only what you said, it keeps working | Voice sheet |
 | Daybook | What the app is, an example matter with its grant, a link to daybook.orcasolutions.dev | Voice sheet sample copy |
-| For the installer | The dark layer: "Not an agent with your passwords" and six plain limits | Brief §3, §4 |
+| For the installer | The dark layer: "Not an agent with your passwords", six plain limits, and Diamond Dog as the layer that makes them hold, with a link to diamonddog.orcasolutions.dev | Brief §2, §3, §4 |
 | In the carton | Four things: the box, the power cord, one card, the backup drive | Brief §8 |
-| Where it stands | In development; `[UNITS]`, `[DATE]`, `[EMAIL]` placeholders; no price | Jason: no prices until the pilot |
+| Where it stands | In development; `[UNITS]` and `[DATE]` placeholders; jason@orcasolutions.dev; no price | Jason: no prices until the pilot |
 | Footer | "Made by Orca. It started with a spreadsheet." Links to Daybook, Diamond Dog, the GitHub organisation | Brief §6 |
 
 ## Rules
