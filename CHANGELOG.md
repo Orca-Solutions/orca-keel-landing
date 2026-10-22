@@ -13,3 +13,4 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 - Canonical URL, `og:url` and `site/CNAME` for orcakeel.orcasolutions.dev.
 - Diamond Dog named in the installer's layer; the contact address.
 - Which models the box works with, in the Daybook section and the installer's list.
+- Later mentions of the name read "Keel"; the first in a section stays "Orca Keel".

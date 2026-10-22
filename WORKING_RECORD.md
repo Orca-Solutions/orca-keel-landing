@@ -6,6 +6,8 @@ Current state, open tasks, verification and review dispositions. Newest first.
 
 **State.** Jason asked for a brief mention, as Otto's page has, of how the box works with Claude, ChatGPT and the like. The Daybook section gains one paragraph: reading and drafting take a model, the box works with Claude, ChatGPT or another provider the household picks, each provider gets only the part of a matter the job needs under a grant, and the record, deadlines and reminders need no model. The installer's list gains a seventh limit: no model runs on the box. Both follow the plan set (doc 08 R12, R13, R19; doc 05 OH7, no local inference). Who pays for model use (own keys or a service) is open (doc 05 Q11), so the page does not say.
 
+Jason also settled how the name is written (2026-10-22): "Orca Keel" in full where it stands alone or first appears on the page, "Keel" alone for every later mention and inside the product, never "Keel by Orca". Three later mentions on the page change to "Keel"; the rule is in CLAUDE.md and docs/SPEC.md.
+
 **Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors. Routine copy; author check only.
 
 ## 2026-10-22: GitHub Pages and the domain
