@@ -22,6 +22,8 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 
 ### Changed
 
+- The box scene: a shelf edge between floor and wall, an outline and shadow lifting the panel off the Depth band, and a hairline between the feet and the box.
+
 - "Where it stands" says "coming soon" with no units, dates or placeholders.
 - The Daybook section is labelled "For the household", answering "For the installer"; its headline names what it holds: "Calendar, reminders, notes and ideas, kept for you."
 - The hero's wall-and-shelf panel is a Depth panel; the box sits on it with a shadow and its feet, the seal in Shallows.

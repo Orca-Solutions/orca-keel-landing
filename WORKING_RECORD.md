@@ -7,6 +7,11 @@ Current state, open tasks, verification and review dispositions. Newest first.
 **State.** Jason chose the public GitHub Issues list over waiting for an email address (decision card, 2026-10-22 20:32). The repository gains an issue form, `waiting-list.yml`, that says in its first lines that the issue is public, asks for one optional paragraph about the household (how many, roughly where, what Keel should handle first), and requires a tick that nothing private was left in; blank issues are off, and a "waiting list" label (Depth) marks them. The page's "Where it stands" section gains a "Join the waiting list" button to the template and a caption that the list is public and needs a GitHub account; the copy now says places on the first run go in list order, still with no dates or prices. Jason intends a refundable deposit for a place in line later, so early adopters have an advantage; that is logged for the product plan and not on the page.
 
 **Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors. The issue form is checked by opening the new-issue page after the merge (GitHub only reads templates from the default branch). Author check only.
+## 2026-10-22: the scene's edges
+
+**State.** After #8 went live, Jason asked for lines to separate the floor from the wall, an outline or transition between the panel and the Depth band, and a touch of separation between the box and its feet. The seam is now a 1 px Depth hairline over a 3 px lip in the surface's rule tone, the panel carries a faint Shallows outline and a deeper shadow, and the feet sit 1 px clear of the box with a lit top edge. No copy changed. Deployed state before this change: #8, live 20:29.
+
+**Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors; the scene checked at 2x. Author check only.
 
 ## 2026-10-22: the sea
 
