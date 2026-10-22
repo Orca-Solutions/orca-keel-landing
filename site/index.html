@@ -109,7 +109,7 @@ p { margin: 0; }
 .installer .wrap { display: flex; flex-wrap: wrap; gap: 48px; padding-block: 72px; align-items: flex-start; }
 .installer-copy { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
 .installer-copy .lead { color: var(--dark-fg-2); font-size: 18px; }
-.installer-copy .label { color: var(--dark-fg-2); }
+.installer-copy .label, .installer-copy .caption { color: var(--dark-fg-2); }
 .installer-list { flex: 1 1 360px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 24px; font-size: 15px; line-height: 1.45; margin: 0; padding: 0; list-style: none; }
 .installer-list li { padding: 14px 0; border-top: 1px solid var(--dark-rule); }
 .installer a { color: var(--dark-fg); }
@@ -218,6 +218,8 @@ p { margin: 0; }
         <p class="label">For the installer</p>
         <h2 id="installer-heading">Not an agent with your passwords.</h2>
         <p class="lead">The other boxes ship a general agent with a shell, a browser and your logins, then put a fence around it. Orca Keel has no shell for routines, no third-party skill store, and no microphone that listens on its own.</p>
+        <p class="lead">The layer that makes this hold is Diamond Dog, the studio's delegation-first environment. A routine gets a specific job, clear limits and a record of what happened. It cannot give itself more, and the record says what was seen, what was claimed, and what is still unknown.</p>
+        <p class="caption">Diamond Dog's line is <a href="https://diamonddog.orcasolutions.dev/">delegate work, not your identity</a>.</p>
       </div>
       <ul class="installer-list">
         <li>No terminal, ever.</li>
@@ -252,7 +254,7 @@ p { margin: 0; }
       </div>
       <div class="stands-aside">
         <p class="label">If you want one</p>
-        <p class="record">Write to <a href="mailto:[EMAIL]">[EMAIL]</a> and say a little about your house. We will write back when there is something to say.</p>
+        <p class="record">Write to <a href="mailto:jason@orcasolutions.dev">jason@orcasolutions.dev</a> and say a little about your house. We will write back when there is something to say.</p>
       </div>
     </div>
   </section>
