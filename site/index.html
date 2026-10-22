@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#D8E6E4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#11404B" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F0EEE7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171A18" media="(prefers-color-scheme: dark)">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <title>Orca Keel</title>
 <meta name="description" content="Orca Keel, the household computer. A quiet computer that keeps the house in order: it keeps the record, does only what you told it to, and keeps working when the internet is out. In development.">
@@ -20,7 +20,8 @@
 <style>
 /* Orca Keel landing page. Harbor palette and type from the Orca brand kit (brand/kit/tokens).
    Layout: a 1120px column, wide margins, one accent per screen, the installer's layer on Ink.
-   The sea (Shallows in light mode, Depth in dark) is a ground, never a fill: the top of the page and the close. */
+   Depth is the ground behind the box in both modes; on dark grounds the lockup, the marks and links are Shallows. Depth marks the product: the header tile,
+   the button, the head on light grounds. */
 :root {
   --orca-paper: #F0EEE7; --orca-white: #FFFFFF; --orca-ink: #171A18; --orca-harbor: #1E5A66;
   --orca-stone: #6B6760; --orca-linen: #E2DFD6; --orca-amber: #C8862B; --orca-paper-on-ink: #CFCBC2;
@@ -28,7 +29,8 @@
 
   --bg: var(--orca-paper); --surface: var(--orca-white); --fg: var(--orca-ink); --fg-2: var(--orca-stone);
   --accent: var(--orca-harbor); --rule: var(--orca-linen); --signal: var(--orca-amber);
-  --sea: var(--orca-shallows); --sea-fg-2: var(--orca-stone); --sea-accent: var(--orca-harbor); --sea-rule: #C4D4D1;
+  --sea: var(--orca-depth);
+  --tile-edge: transparent; --mark: var(--orca-depth); --lockup: var(--orca-ink);
   --slab-edge: #0E100F; --shadow: rgba(0, 0, 0, 0.26); --daybook: #2C4F86;
   --dark-bg: var(--orca-ink); --dark-fg: var(--orca-paper); --dark-fg-2: var(--orca-paper-on-ink); --dark-rule: #3D3D3D;
 
@@ -38,15 +40,15 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: #8FBFC9; --rule: #343735;
-    --sea: var(--orca-depth); --sea-fg-2: #A9C3C2; --sea-accent: var(--orca-paper); --sea-rule: #245862;
+    --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: var(--orca-shallows); --rule: #343735;
+    --tile-edge: #2C6370; --mark: var(--orca-shallows); --lockup: var(--orca-shallows);
     --slab-edge: #000000; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
     --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: #8FBFC9; --rule: #343735;
-  --sea: var(--orca-depth); --sea-fg-2: #A9C3C2; --sea-accent: var(--orca-paper); --sea-rule: #245862;
+  --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: var(--orca-shallows); --rule: #343735;
+  --tile-edge: #2C6370; --mark: var(--orca-shallows); --lockup: var(--orca-shallows);
   --slab-edge: #000000; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
   --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
 }
@@ -62,6 +64,7 @@ h1, h2, h3 { margin: 0; font-family: var(--font-product); font-weight: 600; lett
 h1 { font-size: clamp(38px, 6vw, 56px); letter-spacing: -0.025em; line-height: 1.02; }
 h2 { font-size: clamp(30px, 4vw, 40px); }
 h3 { font-size: 24px; line-height: 1.15; }
+.point { color: var(--signal); }
 p { margin: 0; }
 .wrap { max-width: var(--content-max); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
 .label { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-2); }
@@ -72,17 +75,15 @@ p { margin: 0; }
 .with-mark .lead { margin: 0; min-width: 0; }
 .mark { width: 32px; height: 32px; flex: 0 0 auto; margin-top: 0.15em; }
 .mark-daybook { color: var(--daybook); }
-.button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--fg); color: var(--bg); border-radius: 6px; font-weight: 500; font-size: 16px; text-decoration: none; }
+.button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--orca-depth); color: var(--orca-paper); box-shadow: inset 0 0 0 1px var(--tile-edge); border-radius: 6px; font-weight: 500; font-size: 16px; text-decoration: none; }
 .button:hover { opacity: 0.9; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* The sea: the ground at the top of the page and at its close. On Depth, links are Paper. */
-.sea { background: var(--sea); --bg: var(--sea); --fg-2: var(--sea-fg-2); --accent: var(--sea-accent); --rule: var(--sea-rule); }
-
 /* Header */
 .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 20px; }
-.lockup { display: inline-flex; align-items: center; color: var(--fg); text-decoration: none; font-size: 19px; letter-spacing: -0.03em; }
-.lockup svg { width: 30px; height: 30px; flex: 0 0 auto; margin-right: 6px; }
+.lockup { display: inline-flex; align-items: center; color: var(--lockup); text-decoration: none; font-size: 19px; letter-spacing: -0.03em; }
+.tile { width: 34px; height: 34px; flex: 0 0 auto; margin-right: 10px; border-radius: 8px; background: var(--orca-depth); box-shadow: inset 0 0 0 1px var(--tile-edge); display: grid; place-items: center; }
+.tile svg { width: 24px; height: 24px; color: var(--orca-paper); }
 .lockup span { margin-left: 0.16em; }
 .lockup b { font-weight: 600; }
 .lockup span { font-weight: 400; }
@@ -96,13 +97,13 @@ p { margin: 0; }
 .hero-copy { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
 .hero-art { flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; }
-.scene { width: 100%; max-width: 460px; aspect-ratio: 16 / 10; position: relative; }
+.scene { width: 100%; max-width: 460px; aspect-ratio: 16 / 10; position: relative; background: var(--sea); border-radius: 10px; overflow: hidden; }
 @media (max-width: 600px) { .scene { aspect-ratio: 2 / 1; } }
 .box { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; height: 23%; background: linear-gradient(160deg, #272B2A 0%, var(--orca-ink) 52%, #111312 100%); border-radius: 7px; box-shadow: 0 26px 40px var(--shadow), 0 6px 12px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -2px 0 var(--slab-edge); display: flex; align-items: center; justify-content: space-between; padding-inline: 5%; }
 .box::before, .box::after { content: ""; position: absolute; bottom: -8px; width: 9%; height: 8px; background: var(--slab-edge); border-radius: 0 0 3px 3px; }
 .box::before { left: 8%; }
 .box::after { right: 8%; }
-.seal { height: 50%; width: auto; color: var(--orca-paper); }
+.seal { height: 50%; width: auto; color: var(--orca-shallows); }
 .light { width: 6px; height: 6px; border-radius: 3px; background: var(--signal); box-shadow: 0 0 8px 1px rgba(200,134,43,0.6); }
 
 /* Claims */
@@ -128,9 +129,10 @@ p { margin: 0; }
 .installer-copy { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
 .installer-copy .lead { color: var(--dark-fg-2); font-size: 18px; }
 .installer-copy .label, .installer-copy .caption { color: var(--dark-fg-2); }
+.installer-copy .label { color: var(--orca-shallows); }
 .installer-list { flex: 1 1 360px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 24px; font-size: 15px; line-height: 1.45; margin: 0; padding: 0; list-style: none; }
 .installer-list li { padding: 14px 0; border-top: 1px solid var(--dark-rule); }
-.installer a { color: var(--dark-fg); }
+.installer a { color: var(--orca-shallows); }
 
 /* The carton */
 .carton { display: flex; flex-wrap: wrap; gap: 48px; padding-block: 80px; align-items: flex-start; }
@@ -141,13 +143,14 @@ p { margin: 0; }
 .item p { font-size: 14px; line-height: 1.45; }
 
 /* Where it stands */
+.stands { border-top: 1px solid var(--rule); }
 .stands .wrap { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px 48px; padding-block: 56px; }
 .stands-copy { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; max-width: 62ch; }
 
 /* Footer */
 .footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 28px 44px; font-size: 13px; color: var(--fg-2); border-top: 1px solid var(--rule); }
 .footer-made { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.footer-made svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.footer-made svg { width: 18px; height: 18px; flex: 0 0 auto; color: var(--mark); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .footer-links a { color: var(--fg-2); text-decoration: none; }
 .footer-links a:hover { color: var(--accent); }
@@ -155,10 +158,9 @@ p { margin: 0; }
 </head>
 <body>
 
-<header class="sea" id="top">
-<div class="wrap header">
+<header class="wrap header" id="top">
   <a class="lockup" href="#top" aria-label="Orca Keel, home">
-    <svg viewBox="0 0 240 240" aria-hidden="true"><path d="M58 25 C78 22 96 40 121 43 C177 47 214 84 216 132 C216 143 214 153 209 162 C177 139 146 126 116 128 C83 130 57 150 56 178 C56 189 60 199 67 208 C70 213 65 218 60 215 C35 198 20 171 21 139 C21 113 31 91 45 74 C58 58 65 43 58 25 Z M136 83 C149 78 168 85 180 97 C192 109 188 116 174 116 C161 116 144 108 137 99 C132 93 131 86 136 83 Z" fill="currentColor" fill-rule="evenodd"/></svg>
+    <span class="tile"><svg viewBox="0 0 240 240" aria-hidden="true"><path d="M58 25 C78 22 96 40 121 43 C177 47 214 84 216 132 C216 143 214 153 209 162 C177 139 146 126 116 128 C83 130 57 150 56 178 C56 189 60 199 67 208 C70 213 65 218 60 215 C35 198 20 171 21 139 C21 113 31 91 45 74 C58 58 65 43 58 25 Z M136 83 C149 78 168 85 180 97 C192 109 188 116 174 116 C161 116 144 108 137 99 C132 93 131 86 136 83 Z" fill="currentColor" fill-rule="evenodd"/></svg></span>
     <b>orca</b><span>keel</span>
   </a>
   <nav class="nav" aria-label="Sections">
@@ -168,15 +170,13 @@ p { margin: 0; }
     <a href="#carton">In the carton</a>
     <span class="status">In development</span>
   </nav>
-</div>
 </header>
 
 <main>
-  <section class="sea" aria-labelledby="hero-heading">
-  <div class="wrap hero">
+  <section class="wrap hero" aria-labelledby="hero-heading">
     <div class="hero-copy">
       <p class="label">The household computer</p>
-      <h1 id="hero-heading">A quiet computer that keeps the house in order.</h1>
+      <h1 id="hero-heading">A quiet computer that keeps the house in order<span class="point">.</span></h1>
       <p class="lead">Orca Keel runs your household's paperwork: returns, renewals, school forms, repairs, the bill that is due Friday. It keeps the record, does only what you told it to, and keeps working when the internet is out.</p>
       <div class="hero-actions">
         <a class="button" href="#stands">Where it stands</a>
@@ -186,7 +186,6 @@ p { margin: 0; }
     <div class="hero-art" aria-hidden="true">
       <div class="scene"><div class="box"><svg class="seal" viewBox="0 0 240 240"><path d="M63 29 C82 29 96 42 122 45 C176 49 211 85 213 132 C213 143 211 151 207 158 C174 137 145 127 117 130 C83 133 59 153 59 180 C59 190 63 199 68 207 C71 212 66 216 61 213 C36 196 22 170 23 140 C23 114 34 92 48 74 C62 57 68 44 63 29 Z M132 80 C146 75 168 83 182 96 C195 109 190 120 175 120 C160 120 140 110 132 100 C126 92 126 83 132 80 Z" fill="currentColor" fill-rule="evenodd"/></svg><div class="light"></div></div></div>
     </div>
-  </div>
   </section>
 
   <section class="band" id="how" aria-labelledby="how-heading">
@@ -270,7 +269,7 @@ p { margin: 0; }
     </div>
   </section>
 
-  <section class="sea stands" id="stands" aria-labelledby="stands-heading">
+  <section class="stands" id="stands" aria-labelledby="stands-heading">
     <div class="wrap">
       <div class="stands-copy">
         <p class="label">Where it stands</p>
@@ -281,8 +280,7 @@ p { margin: 0; }
   </section>
 </main>
 
-<footer class="sea">
-<div class="wrap footer">
+<footer class="wrap footer">
   <div class="footer-made">
     <svg viewBox="0 0 240 240" aria-hidden="true"><path d="M63 29 C82 29 96 42 122 45 C176 49 211 85 213 132 C213 143 211 151 207 158 C174 137 145 127 117 130 C83 133 59 153 59 180 C59 190 63 199 68 207 C71 212 66 216 61 213 C36 196 22 170 23 140 C23 114 34 92 48 74 C62 57 68 44 63 29 Z M132 80 C146 75 168 83 182 96 C195 109 190 120 175 120 C160 120 140 110 132 100 C126 92 126 83 132 80 Z" fill="currentColor" fill-rule="evenodd"/></svg>
     <span>Orca Keel is made by Orca, a software studio. It started with a spreadsheet.</span>
@@ -292,7 +290,6 @@ p { margin: 0; }
     <a href="https://diamonddog.orcasolutions.dev/">Diamond Dog</a>
     <a href="https://github.com/Orca-Solutions">Orca Solutions on GitHub</a>
   </div>
-</div>
 </footer>
 
 </body>
