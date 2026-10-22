@@ -1,6 +1,6 @@
 # Orca · Brand Kit
 
-Draft 0.2, October 21, 2026. Built from the brand brief (`../01-brand-brief.md`) and the Orca Solutions **Signal v1.0** identity package (September 27, 2026), kept in the Orca Keel plan set (not in this repository). Harbor is the default theme; its neutrals are the studio's Ink #171A18 and Chalk #F0EEE7.
+Draft 0.3, October 22, 2026 (0.2 on October 21). Built from the brand brief (`../01-brand-brief.md`) and the Orca Solutions **Signal v1.0** identity package (September 27, 2026), kept in the Orca Keel plan set (not in this repository). Harbor is the default theme; its neutrals are the studio's Ink #171A18 and Chalk #F0EEE7.
 
 The head is vector geometry from Signal's `geometry.json`: the primary cut for 32 px and up, and a micro cut (larger patch, softer dorsal) for 16 to 31 px and favicons. Signal's own usage rules in `source/orca-signal-v1/README.md` apply to the studio's lockup; the rules below apply to the products.
 
@@ -18,13 +18,14 @@ kit/
 │   ├── orca-head-ink-{256,512,1024}.png     transparent PNGs (and -chalk)
 │   └── orca-app-icon-{ink,chalk}-{180,512,1024}.png   rounded-square icons for the box's settings
 ├── lockups/                      SVG with text as outlines, and @2x PNG, each in -ink and -chalk
-│   ├── orca-wordmark             "Orca" alone
-│   ├── orca-lockup               head + Orca
-│   ├── orca-keel-lockup          head + Orca Keel, one line
-│   ├── orca-keel-stacked         head above Orca / Keel
-│   ├── keel-wordmark             "Keel" alone (settings icon source)
+│   ├── orca-wordmark             "orca" alone, lowercase
+│   ├── orca-lockup               head + orca
+│   ├── orca-keel-lockup          head + orca keel, one line: orca 600, keel 400, 0.16 em between
+│   ├── orca-keel-stacked         head above orca / keel
+│   ├── keel-wordmark             "keel" alone (settings icon source)
 │   ├── by-orca                   the endorsement line for Daybook and partner surfaces
 │   ├── orca-solutions-words      the studio in words, for product surfaces; the studio's own lockup is in source/
+│   ├── *-titlecase               the title-case set ("Orca Keel"), kept as an alternate, not for new work
 │   └── contact-sheet.png         all of the above on Chalk and on Ink
 └── tokens/
     ├── tokens.json               colors, type scale, space, radius, mark rules, the light
@@ -37,7 +38,7 @@ kit/
 
 **The seal.** The head alone is pressed into every physical product: debossed tone on tone in the box's top surface (about 18 mm, beside the amber light); blind-embossed in the carton board; printed in Ink on the card. No word with it.
 
-**Lockups.** The umbrella on product surfaces is the head plus "Orca" in Instrument Sans semibold. A product is "Orca" semibold followed by its word in regular: Orca Keel. The studio keeps its Signal lockup (head + lowercase orca / solutions in outlined Helvetica Neue) on its own site and documents; on product surfaces it is "Orca Solutions" in words at a smaller size. Software (Daybook) keeps its own name and icon and carries "by Orca" where there is room.
+**Lockups.** Lowercase, like the studio's lettering (jason, 2026-10-22). The umbrella on product surfaces is the head plus "orca" in Instrument Sans semibold. A product is "orca" semibold followed by its word in regular at the same size, 0.16 em apart, never a full space: orca keel. In running text the name is written Orca Keel; lowercase is for the lockup only. The studio keeps its Signal lockup (head + lowercase orca / solutions in outlined Helvetica Neue) on its own site and documents; on product surfaces it is "Orca Solutions" in words at a smaller size. Software (Daybook) keeps its own name and icon and carries "by Orca" where there is room.
 
 **Color.** Paper ground, Ink text, Harbor once per screen, Stone for secondary text, Linen for rules, Amber for the listening light and nothing else. The installer's layer is Ink ground with Paper text (`.orca-dark`).
 
