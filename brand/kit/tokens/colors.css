@@ -94,4 +94,5 @@ h3 { font-size: var(--title); line-height: 1.15; }
 .button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--action); color: var(--action-fg); border-radius: var(--radius-control); font-weight: 500; font-size: var(--ui); text-decoration: none; }
 .card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); }
 .light { width: 6px; height: 6px; border-radius: 3px; background: var(--signal); }
-.point { color: var(--signal); } /* an amber point: a headline's period, a link's arrow, a marker on a number. Up to three per page */
+.point { color: var(--signal); } /* an amber point: the final period of every section title (h1, h2), a status dot. Never text, a fill or a button */
+h1 .point, h2 .point { color: var(--signal); }
