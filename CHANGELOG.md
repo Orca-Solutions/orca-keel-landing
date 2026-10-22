@@ -22,6 +22,7 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 
 ### Changed
 
+- The header bar stays at the top of the window at desktop widths and carries the keel line; section links land under it. In the hero, the setup line sits above the "Where it stands" button.
 - The box scene: a shelf edge between floor and wall, an outline and shadow lifting the panel off the Depth band, and a hairline between the feet and the box.
 
 - "Where it stands" says "coming soon" with no units, dates or placeholders.
