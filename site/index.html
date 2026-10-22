@@ -20,7 +20,7 @@
 <style>
 /* Orca Keel landing page. Harbor palette and type from the Orca brand kit (brand/kit/tokens).
    Layout: a 1120px column, wide margins, one accent per screen. Depth is Keel's colour (kit draft 0.5, B-15): the keel
-   line, the lockup on light grounds, the action, and the two dark bands (the hero with the box drawn in Harbor on a Shallows panel, B-16, the
+   line, the lockup on light grounds, the action, and the two dark bands (the hero with the Ink box on a Shallows surface against a Harbor wall, the
    installer's layer). On dark grounds the lockup, display text, marks, links and the action are Shallows. The footer is on Ink. Depth marks the product: the header tile,
    the button, the head on light grounds. */
 :root {
@@ -32,7 +32,7 @@
   --accent: var(--orca-harbor); --rule: var(--orca-linen); --signal: var(--orca-amber);
   --tile-edge: transparent; --mark: var(--orca-depth); --lockup: var(--orca-depth); --display: var(--orca-ink);
   --action: var(--orca-depth); --action-fg: var(--orca-paper);
-  --slab-edge: #143F47; --shadow: rgba(0, 0, 0, 0.26); --daybook: #2C4F86;
+  --slab-edge: #0E100F; --shadow: rgba(0, 0, 0, 0.26); --daybook: #2C4F86;
   --ink-band: var(--orca-ink); --ink-rule: #3D3D3D;
 
   --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -44,7 +44,7 @@
     --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: var(--orca-shallows); --rule: #343735;
     --tile-edge: #2C6370; --mark: var(--orca-shallows); --lockup: var(--orca-shallows); --display: var(--orca-shallows);
     --action: var(--orca-shallows); --action-fg: var(--orca-depth);
-    --slab-edge: #0E3038; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
+    --slab-edge: #000000; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
     --ink-band: #0E100F; --ink-rule: #2E312F; color-scheme: dark;
   }
 }
@@ -52,7 +52,7 @@
   --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: var(--orca-shallows); --rule: #343735;
   --tile-edge: #2C6370; --mark: var(--orca-shallows); --lockup: var(--orca-shallows); --display: var(--orca-shallows);
     --action: var(--orca-shallows); --action-fg: var(--orca-depth);
-  --slab-edge: #0E3038; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
+  --slab-edge: #000000; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
   --ink-band: #0E100F; --ink-rule: #2E312F; color-scheme: dark;
 }
 
@@ -104,9 +104,10 @@ p { margin: 0; }
 .hero-copy { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
 .hero-art { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.scene { width: 100%; max-width: 460px; aspect-ratio: 16 / 10; position: relative; background: var(--orca-shallows); border-radius: 10px; overflow: hidden; }
+.scene { width: 100%; max-width: 460px; aspect-ratio: 16 / 10; position: relative; background: linear-gradient(var(--orca-harbor) 0 72%, var(--orca-shallows) 72% 100%); border-radius: 10px; overflow: hidden; }
 @media (max-width: 600px) { .scene { aspect-ratio: 2 / 1; } }
-.box { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; height: 23%; background: linear-gradient(160deg, #27666F 0%, var(--orca-harbor) 52%, #194C56 100%); border-radius: 7px; box-shadow: 0 26px 40px var(--shadow), 0 6px 12px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -2px 0 var(--slab-edge); display: flex; align-items: center; justify-content: space-between; padding-inline: 5%; }
+.scene::after { content: ""; position: absolute; left: 0; right: 0; top: 72%; border-top: 1px solid rgba(0,0,0,0.14); }
+.box { position: absolute; z-index: 1; left: 50%; bottom: calc(28% + 8px); transform: translateX(-50%); width: 64%; height: 21%; background: linear-gradient(160deg, #272B2A 0%, var(--orca-ink) 52%, #111312 100%); border-radius: 7px; box-shadow: 0 22px 30px var(--shadow), 0 4px 10px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -2px 0 var(--slab-edge); display: flex; align-items: center; justify-content: space-between; padding-inline: 5%; }
 .box::before, .box::after { content: ""; position: absolute; bottom: -8px; width: 9%; height: 8px; background: var(--slab-edge); border-radius: 0 0 3px 3px; }
 .box::before { left: 8%; }
 .box::after { right: 8%; }

@@ -24,7 +24,7 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 - "Where it stands" says "coming soon" with no units, dates or placeholders.
 - The Daybook section is labelled "For the household", answering "For the installer"; its headline names what it holds: "Calendar, reminders, notes and ideas, kept for you."
 - The hero's wall-and-shelf panel is a Depth panel; the box sits on it with a shadow and its feet, the seal in Shallows.
-- The hero and the installer's layer as Depth bands; the box drawn in Harbor on a Shallows panel (B-16) with the caption "Prototype photo coming soon."; the carton on the white band; the footer on Ink with the lockup, the studio line and the sibling links; amber dots on the status and the grant, and the final period of every section headline in Amber, as on the studio's site.
+- The hero and the installer's layer as Depth bands; the Ink box on a Shallows surface against a Harbor wall, with the caption "Prototype photo coming soon."; the carton on the white band; the footer on Ink with the lockup, the studio line and the sibling links; amber dots on the status and the grant, and the final period of every section headline in Amber, as on the studio's site.
 - Kit draft 0.5 (B-15): the keel line, 3 px of Depth at the top of the page; the lockup in Depth on light grounds; the button Shallows with Depth text on dark grounds; display text Shallows in dark mode.
 
 ### Removed
