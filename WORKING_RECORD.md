@@ -10,6 +10,8 @@ In the same round Jason asked for the sibling products' marks beside their parag
 
 **Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors; the hero was checked at 2x in both themes. Routine design and copy; author check only.
 
+**Commits.** Jason noticed on 2026-10-22 that the agent's commits carried an SSH signature from the agent environment's own key (its global git config signs every commit), shown on GitHub as an unverified signature by a key that is not his. The environment's signing is now switched off in the clone, and this branch's commits were recreated unsigned, authored and signed off by Jason. The signed commits already on `main` (the five from the first day) stay as they are unless Jason re-signs them from his Mac; merge commits are GitHub's own.
+
 ## 2026-10-22: which models it works with
 
 **State.** Jason asked for a brief mention, as Otto's page has, of how the box works with Claude, ChatGPT and the like. The Daybook section gains one paragraph: reading and drafting take a model, the box works with Claude, ChatGPT or another provider the household picks, each provider gets only the part of a matter the job needs under a grant, and the record, deadlines and reminders need no model. The installer's list gains a seventh limit: no model runs on the box. Both follow the plan set (doc 08 R12, R13, R19; doc 05 OH7, no local inference). Who pays for model use (own keys or a service) is open (doc 05 Q11), so the page does not say.
