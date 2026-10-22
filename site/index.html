@@ -19,9 +19,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
 <style>
 /* Orca Keel landing page. Harbor palette and type from the Orca brand kit (brand/kit/tokens).
-   Layout: a 1120px column, wide margins, one accent per screen, the installer's layer on Ink.
-   Depth is Keel's colour (kit draft 0.5, B-15): the keel line, the lockup on light grounds, the action, the band behind the box.
-   On dark grounds the lockup, display text, marks, links and the action are Shallows. Neither is a page ground. Depth marks the product: the header tile,
+   Layout: a 1120px column, wide margins, one accent per screen. Depth is Keel's colour (kit draft 0.5, B-15): the keel
+   line, the lockup on light grounds, the action, and the two dark bands (the hero with the box on a Harbor panel, the
+   installer's layer). On dark grounds the lockup, display text, marks, links and the action are Shallows. The footer is on Ink. Depth marks the product: the header tile,
    the button, the head on light grounds. */
 :root {
   --orca-paper: #F0EEE7; --orca-white: #FFFFFF; --orca-ink: #171A18; --orca-harbor: #1E5A66;
@@ -30,11 +30,10 @@
 
   --bg: var(--orca-paper); --surface: var(--orca-white); --fg: var(--orca-ink); --fg-2: var(--orca-stone);
   --accent: var(--orca-harbor); --rule: var(--orca-linen); --signal: var(--orca-amber);
-  --sea: var(--orca-depth);
   --tile-edge: transparent; --mark: var(--orca-depth); --lockup: var(--orca-depth); --display: var(--orca-ink);
   --action: var(--orca-depth); --action-fg: var(--orca-paper);
   --slab-edge: #0E100F; --shadow: rgba(0, 0, 0, 0.26); --daybook: #2C4F86;
-  --dark-bg: var(--orca-ink); --dark-fg: var(--orca-paper); --dark-fg-2: var(--orca-paper-on-ink); --dark-rule: #3D3D3D;
+  --ink-band: var(--orca-ink); --ink-rule: #3D3D3D;
 
   --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-record: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -46,7 +45,7 @@
     --tile-edge: #2C6370; --mark: var(--orca-shallows); --lockup: var(--orca-shallows); --display: var(--orca-shallows);
     --action: var(--orca-shallows); --action-fg: var(--orca-depth);
     --slab-edge: #000000; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
-    --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
+    --ink-band: #0E100F; --ink-rule: #2E312F; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
@@ -54,7 +53,7 @@
   --tile-edge: #2C6370; --mark: var(--orca-shallows); --lockup: var(--orca-shallows); --display: var(--orca-shallows);
     --action: var(--orca-shallows); --action-fg: var(--orca-depth);
   --slab-edge: #000000; --shadow: rgba(0, 0, 0, 0.5); --daybook: #9DB8E6;
-  --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
+  --ink-band: #0E100F; --ink-rule: #2E312F; color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -69,6 +68,7 @@ h1 { font-size: clamp(38px, 6vw, 56px); letter-spacing: -0.025em; line-height: 1
 h2 { font-size: clamp(30px, 4vw, 40px); }
 h3 { font-size: 24px; line-height: 1.15; }
 .point { color: var(--signal); }
+.dot::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--signal); margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 6px 1px rgba(200,134,43,0.45); }
 p { margin: 0; }
 .wrap { max-width: var(--content-max); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
 .label { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-2); }
@@ -82,6 +82,9 @@ p { margin: 0; }
 .button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--action); color: var(--action-fg); border-radius: 6px; font-weight: 500; font-size: 16px; text-decoration: none; }
 .button:hover { opacity: 0.9; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* The Depth band (the kit's .orca-depth): the hero and the installer's layer, in both modes. */
+.depth { background: var(--orca-depth); color: var(--orca-paper); --bg: var(--orca-depth); --surface: #1A4A55; --fg: var(--orca-paper); --fg-2: #A9C3C2; --display: var(--orca-shallows); --accent: var(--orca-shallows); --rule: #245862; --action: var(--orca-shallows); --action-fg: var(--orca-depth); --mark: var(--orca-shallows); }
 
 /* Header */
 .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 20px; }
@@ -100,8 +103,8 @@ p { margin: 0; }
 .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding-block: 56px 72px; }
 .hero-copy { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
-.hero-art { flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; }
-.scene { width: 100%; max-width: 460px; aspect-ratio: 16 / 10; position: relative; background: var(--sea); border-radius: 10px; overflow: hidden; }
+.hero-art { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.scene { width: 100%; max-width: 460px; aspect-ratio: 16 / 10; position: relative; background: var(--orca-harbor); border-radius: 10px; overflow: hidden; }
 @media (max-width: 600px) { .scene { aspect-ratio: 2 / 1; } }
 .box { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; height: 23%; background: linear-gradient(160deg, #272B2A 0%, var(--orca-ink) 52%, #111312 100%); border-radius: 7px; box-shadow: 0 26px 40px var(--shadow), 0 6px 12px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -2px 0 var(--slab-edge); display: flex; align-items: center; justify-content: space-between; padding-inline: 5%; }
 .box::before, .box::after { content: ""; position: absolute; bottom: -8px; width: 9%; height: 8px; background: var(--slab-edge); border-radius: 0 0 3px 3px; }
@@ -112,6 +115,7 @@ p { margin: 0; }
 
 /* Claims */
 .band { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.band .item { background: var(--bg); }
 .claims { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 32px; padding-block: 64px; }
 .claim { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 
@@ -128,18 +132,15 @@ p { margin: 0; }
 .grant .label { font-size: 12px; }
 
 /* The installer's layer */
-.installer { background: var(--dark-bg); color: var(--dark-fg); }
 .installer .wrap { display: flex; flex-wrap: wrap; gap: 48px; padding-block: 72px; align-items: flex-start; }
 .installer-copy { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
-.installer-copy .lead { color: var(--dark-fg-2); font-size: 18px; }
-.installer-copy .label, .installer-copy .caption { color: var(--dark-fg-2); }
+.installer-copy .lead { font-size: 18px; }
 .installer-copy .label { color: var(--orca-shallows); }
 .installer-list { flex: 1 1 360px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 24px; font-size: 15px; line-height: 1.45; margin: 0; padding: 0; list-style: none; }
-.installer-list li { padding: 14px 0; border-top: 1px solid var(--dark-rule); }
-.installer a { color: var(--orca-shallows); }
+.installer-list li { padding: 14px 0; border-top: 1px solid var(--rule); }
 
 /* The carton */
-.carton { display: flex; flex-wrap: wrap; gap: 48px; padding-block: 80px; align-items: flex-start; }
+.carton { display: flex; flex-wrap: wrap; gap: 48px; padding-block: 72px; align-items: flex-start; }
 .carton-copy { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
 .carton-grid { flex: 2 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .item { padding: 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
@@ -151,13 +152,19 @@ p { margin: 0; }
 .stands .wrap { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px 48px; padding-block: 56px; }
 .stands-copy { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; max-width: 62ch; }
 
-/* Footer */
-.footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 28px 44px; font-size: 13px; color: var(--fg-2); border-top: 1px solid var(--rule); }
-.footer-made { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.footer-made svg { width: 18px; height: 18px; flex: 0 0 auto; color: var(--mark); }
-.footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
-.footer-links a { color: var(--fg-2); text-decoration: none; }
-.footer-links a:hover { color: var(--accent); }
+/* Footer, on Ink: the lockup in Shallows, the studio line, the links */
+.footer-band { background: var(--ink-band); color: var(--orca-paper-on-ink); --mark: var(--orca-shallows); --lockup: var(--orca-shallows); --accent: var(--orca-shallows); --tile-edge: #2C6370; }
+.footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 28px 48px; padding-block: 48px 40px; font-size: 14px; }
+.footer-made { display: flex; flex-direction: column; gap: 14px; min-width: 0; max-width: 46ch; }
+.footer-made .lockup { font-size: 17px; }
+.footer-made .tile { width: 30px; height: 30px; border-radius: 7px; }
+.footer-made .tile svg { width: 21px; height: 21px; }
+.footer-made p { line-height: 1.5; }
+.footer-links { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.footer-links .label { color: var(--orca-shallows); margin-bottom: 2px; }
+.footer-links a { color: var(--orca-paper); text-decoration: none; }
+.footer-links a:hover { color: var(--orca-shallows); text-decoration: underline; }
+.footer-end { width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 20px; border-top: 1px solid var(--ink-rule); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -172,12 +179,13 @@ p { margin: 0; }
     <a href="#daybook">Daybook</a>
     <a href="#installer">For the installer</a>
     <a href="#carton">In the carton</a>
-    <span class="status">In development</span>
+    <span class="status dot">In development</span>
   </nav>
 </header>
 
 <main>
-  <section class="wrap hero" aria-labelledby="hero-heading">
+  <section class="depth" aria-labelledby="hero-heading">
+  <div class="wrap hero">
     <div class="hero-copy">
       <p class="label">The household computer</p>
       <h1 id="hero-heading">A quiet computer that keeps the house in order<span class="point">.</span></h1>
@@ -189,7 +197,9 @@ p { margin: 0; }
     </div>
     <div class="hero-art" aria-hidden="true">
       <div class="scene"><div class="box"><svg class="seal" viewBox="0 0 240 240"><path d="M63 29 C82 29 96 42 122 45 C176 49 211 85 213 132 C213 143 211 151 207 158 C174 137 145 127 117 130 C83 133 59 153 59 180 C59 190 63 199 68 207 C71 212 66 216 61 213 C36 196 22 170 23 140 C23 114 34 92 48 74 C62 57 68 44 63 29 Z M132 80 C146 75 168 83 182 96 C195 109 190 120 175 120 C160 120 140 110 132 100 C126 92 126 83 132 80 Z" fill="currentColor" fill-rule="evenodd"/></svg><div class="light"></div></div></div>
+      <p class="caption">Prototype photo coming soon.</p>
     </div>
+  </div>
   </section>
 
   <section class="band" id="how" aria-labelledby="how-heading">
@@ -228,7 +238,7 @@ p { margin: 0; }
         </div>
         <p class="matter-body">Source: a letter photographed Tuesday. Amount: $138.40. Same as last month within a dollar.</p>
         <div class="grant">
-          <div class="label">Grant</div>
+          <div class="label dot">Grant</div>
           <p class="matter-body">Pay the water bill, up to $140, before Friday. Nothing else.</p>
           <div class="ui">Granted by Sam, Wed 8:12 pm. Expires Friday.</div>
         </div>
@@ -237,7 +247,7 @@ p { margin: 0; }
     </div>
   </section>
 
-  <section class="installer" id="installer" aria-labelledby="installer-heading">
+  <section class="depth installer" id="installer" aria-labelledby="installer-heading">
     <div class="wrap">
       <div class="installer-copy">
         <p class="label">For the installer</p>
@@ -260,7 +270,8 @@ p { margin: 0; }
     </div>
   </section>
 
-  <section class="wrap carton" id="carton" aria-labelledby="carton-heading">
+  <section class="band" id="carton" aria-labelledby="carton-heading">
+  <div class="wrap carton">
     <div class="carton-copy">
       <p class="label">In the carton</p>
       <h2 id="carton-heading">Four things. Nothing to assemble.</h2>
@@ -271,29 +282,37 @@ p { margin: 0; }
       <div class="item"><b>One card</b><p>The pairing code and three steps. That is the manual.</p></div>
       <div class="item"><b>Your backup drive</b><p>Keep it in another room. Recovery works on day one, no subscription needed.</p></div>
     </div>
+  </div>
   </section>
 
   <section class="stands" id="stands" aria-labelledby="stands-heading">
     <div class="wrap">
       <div class="stands-copy">
         <p class="label">Where it stands</p>
-        <h2 id="stands-heading">Coming soon.</h2>
+        <h2 id="stands-heading">Coming soon<span class="point">.</span></h2>
         <p class="record">Keel is being built in one house first. A waiting list will open here when it is ready for more. Nothing to sign up for yet.</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="wrap footer">
+<footer class="footer-band">
+<div class="wrap footer">
   <div class="footer-made">
-    <svg viewBox="0 0 240 240" aria-hidden="true"><path d="M63 29 C82 29 96 42 122 45 C176 49 211 85 213 132 C213 143 211 151 207 158 C174 137 145 127 117 130 C83 133 59 153 59 180 C59 190 63 199 68 207 C71 212 66 216 61 213 C36 196 22 170 23 140 C23 114 34 92 48 74 C62 57 68 44 63 29 Z M132 80 C146 75 168 83 182 96 C195 109 190 120 175 120 C160 120 140 110 132 100 C126 92 126 83 132 80 Z" fill="currentColor" fill-rule="evenodd"/></svg>
-    <span>Orca Keel is made by Orca, a software studio. It started with a spreadsheet.</span>
+    <a class="lockup" href="#top" aria-label="Orca Keel, top of page"><span class="tile"><svg viewBox="0 0 240 240" aria-hidden="true"><path d="M63 29 C82 29 96 42 122 45 C176 49 211 85 213 132 C213 143 211 151 207 158 C174 137 145 127 117 130 C83 133 59 153 59 180 C59 190 63 199 68 207 C71 212 66 216 61 213 C36 196 22 170 23 140 C23 114 34 92 48 74 C62 57 68 44 63 29 Z M132 80 C146 75 168 83 182 96 C195 109 190 120 175 120 C160 120 140 110 132 100 C126 92 126 83 132 80 Z" fill="currentColor" fill-rule="evenodd"/></svg></span><b>orca</b><span>keel</span></a>
+    <p>Orca Keel is made by Orca, a software studio. It started with a spreadsheet, and the wish for a house that keeps its own record.</p>
   </div>
   <div class="footer-links">
-    <a href="https://daybook.orcasolutions.dev/">Daybook</a>
-    <a href="https://diamonddog.orcasolutions.dev/">Diamond Dog</a>
+    <span class="label">Also from the studio</span>
+    <a href="https://daybook.orcasolutions.dev/">Daybook, the household's book</a>
+    <a href="https://diamonddog.orcasolutions.dev/">Diamond Dog, the delegation layer</a>
     <a href="https://github.com/Orca-Solutions">Orca Solutions on GitHub</a>
   </div>
+  <div class="footer-end">
+    <span>In development. Nothing on this page is collected or tracked.</span>
+    <span>Orca Keel, the household computer.</span>
+  </div>
+</div>
 </footer>
 
 </body>
