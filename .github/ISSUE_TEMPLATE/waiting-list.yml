@@ -1,0 +1,26 @@
+name: Waiting list
+description: Ask for a place in line for Orca Keel. This issue is public.
+title: "Waiting list: a household"
+labels: ["waiting list"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for wanting one. Keel is being built in one house first; places on the first run go in the order of this list.
+
+        **This issue is public.** Anyone can read it. Say only what you are glad for anyone to read, and nothing you would not put on a postcard. No street address, no phone number, no email: we will reach you through this issue.
+  - type: textarea
+    id: household
+    attributes:
+      label: About your household
+      description: Optional. How many of you, roughly where you are (a country or region is plenty), and what you would want Keel to handle first.
+      placeholder: Four of us in the Pacific Northwest. The school forms and the bills, to begin with.
+    validations:
+      required: false
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Public
+      options:
+        - label: I understand this issue is public and I have left out anything private.
+          required: true

@@ -6,6 +6,7 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 
 ### Added
 
+- The waiting list: a public GitHub issue template (`.github/ISSUE_TEMPLATE/waiting-list.yml`, label "waiting list") and a "Join the waiting list" button under "Where it stands", with a caption that says the list is public.
 - Landing page: hero, the three claims, Daybook with an example matter and grant, the installer's layer, the carton, where it stands, footer. Placeholders for units, date and contact; no prices.
 - The Orca brand kit (draft 0.2): the Signal mark, the Orca Keel lockups, the Harbor palette as tokens, the voice sheet.
 - GitHub Pages workflow serving `site/` from `main`.

@@ -12,7 +12,7 @@ One static page, `site/index.html`, for the family household, with the installer
 | Daybook | Label "For the household", headline "Calendar, reminders, notes and ideas, kept for you."; Daybook's house mark beside the paragraph, the name linked to daybook.orcasolutions.dev; what the app is, which models it works with (Claude, ChatGPT or another provider; cloud only, one task's worth, under a grant), an example matter with its grant | Voice sheet sample copy; plan docs 08 (R12, R13, R19) and OH7 |
 | For the installer | The dark layer: "Not an agent with your passwords", seven plain limits (the last: no model runs on the box), and Diamond Dog as the layer that makes them hold, its mark beside the paragraph and the name linked to diamonddog.orcasolutions.dev | Brief §2, §3, §4 |
 | In the carton | Four things: the box, the power cord, one card, the backup drive | Brief §8 |
-| Where it stands | "Coming soon." with the period in Amber, on Paper after the carton's white band; Built in one house first; a waiting list will open; no units, dates, price or address | Jason, 2026-10-22: no promises, no blanks, email waits for Keel's own domain |
+| Where it stands | "Coming soon." with the period in Amber, on Paper after the carton's white band; built in one house first, places go in list order; a "Join the waiting list" button to the public GitHub issue template, with a caption saying it is public and needs an account; no units, dates, price or address | Jason, 2026-10-22: no promises, no blanks, email waits for Keel's own domain |
 | Footer | On Ink: the lockup in Shallows, the studio line, "Also from the studio" links to Daybook, Diamond Dog and the GitHub organisation, a closing line (in development, nothing collected) | Brief §6 |
 
 ## Rules
