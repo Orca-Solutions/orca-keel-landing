@@ -17,7 +17,7 @@ The page has the hero, the three claims, the Daybook section with an example mat
 **Open tasks.**
 - Record the first deployment in `docs/handoffs/` once the custom domain's DNS check passes and HTTPS is enforced.
 - Jason replaces the `LICENSE` placeholder with the licence text he wants.
-- Fill `[UNITS]`, `[DATE]` and `[EMAIL]` when they exist. Pricing stays off the page until the pilot.
+- Fill `[UNITS]` and `[DATE]` when they exist. The contact address is jason@orcasolutions.dev (Jason, 2026-10-22). Pricing stays off the page until the pilot.
 - Photography, when there is some. Until then the hero shows the flat Paper panel with the box drawn as a dark slab and the single amber dot.
 
 **Verification.** The page was rendered with headless Chromium at 1280 px and 390 px in light and dark mode before this push: no horizontal overflow, no console errors, both themes legible. No JavaScript, so nothing to syntax-check. The CSP meta tag allows only inline styles, the two Google Fonts hosts and same-origin images. Author verification only; routine copy and a static page need no independent review.
