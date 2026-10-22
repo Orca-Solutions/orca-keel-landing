@@ -2,6 +2,12 @@
 
 Current state, open tasks, verification and review dispositions. Newest first.
 
+## 2026-10-22: the box, larger, on feet, with the seal in Paper
+
+**State.** After seeing the page live, Jason asked for the seal in the sand colour against the black of the box, a bigger box, and stubby legs for some dimension off the surface. The seal is now Paper (#F0EEE7, the kit's allowed colour for the head on Ink; the wall's sand tone is not one of the mark's colours), the deboss is gone, the box is 60% of the panel wide and 14% tall, and two feet in the slab's edge tone lift it 8 px off the shelf line. No copy changed.
+
+**Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors; hero checked at 2x in both themes. Author check only.
+
 ## 2026-10-22: the box, the lockup, the sibling marks and "coming soon"
 
 **State.** Jason asked for more contrast behind the box in the hero and the orca mark on its front. The panel is now a wall above a shelf (two warm neutrals in light mode, two greys in dark), and the box carries the Signal head debossed into its front: the slab's darker tone with a faint lit edge below, the eye a hole showing the slab, no badge (brand decision B-10). The brand thread re-exported the kit's lockups with a 0.16 em word gap and the head 22 units from the word, and Jason chose lowercase lettering for the lockup, matching the studio's; the kit copy in `brand/kit/` is refreshed from the plan set (lockups, mark PNGs, README) and the page's CSS lockup reads "orca keel" with the kit's spacing. Running copy keeps "Orca Keel".

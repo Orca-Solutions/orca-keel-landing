@@ -7,7 +7,7 @@ One static page, `site/index.html`, for the family household, with the installer
 | Section | Carries | Source |
 | --- | --- | --- |
 | Header | Head + "orca keel" lockup, section links, the status "In development" | Kit lockups; sibling pages' candid status line |
-| Hero | "The household computer" label, the one-line claim, the sub, a link to where it stands, the flat panel: a wall above a shelf, the box as a dark slab with the head debossed on its front and one amber dot | Brief §3, §6, §7 imagery placeholder |
+| Hero | "The household computer" label, the one-line claim, the sub, a link to where it stands, the flat panel: a wall above a shelf, the box as a dark slab on two short feet, the head in Paper on its front and one amber dot | Brief §3, §6, §7 imagery placeholder |
 | How it works | The three claims: it keeps the record, it does only what you said, it keeps working | Voice sheet |
 | Daybook | Daybook's house mark beside the paragraph, the name linked to daybook.orcasolutions.dev; what the app is, which models it works with (Claude, ChatGPT or another provider; cloud only, one task's worth, under a grant), an example matter with its grant | Voice sheet sample copy; plan docs 08 (R12, R13, R19) and OH7 |
 | For the installer | The dark layer: "Not an agent with your passwords", seven plain limits (the last: no model runs on the box), and Diamond Dog as the layer that makes them hold, its mark beside the paragraph and the name linked to diamonddog.orcasolutions.dev | Brief §2, §3, §4 |

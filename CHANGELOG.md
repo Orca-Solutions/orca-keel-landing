@@ -14,7 +14,7 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 - Diamond Dog named in the installer's layer; the contact address.
 - Which models the box works with, in the Daybook section and the installer's list.
 - Later mentions of the name read "Keel"; the first in a section stays "Orca Keel".
-- The hero panel as a wall and a shelf, with the head debossed on the front of the box.
+- The hero panel as a wall and a shelf; the box larger, on two short feet, with the head in Paper on its front.
 - The lockup in lowercase with the kit's spacing; the kit copy refreshed (lowercase lockups, title-case kept as an alternate).
 - Daybook's and Diamond Dog's marks beside their paragraphs; the product names are the links.
 
