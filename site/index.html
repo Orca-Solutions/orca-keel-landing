@@ -26,7 +26,7 @@
 
   --bg: var(--orca-paper); --surface: var(--orca-white); --fg: var(--orca-ink); --fg-2: var(--orca-stone);
   --accent: var(--orca-harbor); --rule: var(--orca-linen); --signal: var(--orca-amber);
-  --panel: #E6E3DA; --slab: #2A2A2A; --slab-edge: #1B1B1B;
+  --wall: #D8D3C6; --shelf: #E4E0D5; --slab: #232423; --slab-edge: #121312; --slab-mark: #0C0D0C; --slab-light: rgba(240,238,231,0.14);
   --dark-bg: var(--orca-ink); --dark-fg: var(--orca-paper); --dark-fg-2: var(--orca-paper-on-ink); --dark-rule: #3D3D3D;
 
   --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -36,13 +36,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: #8FBFC9; --rule: #343735;
-    --panel: #212422; --slab: #0E100F; --slab-edge: #000000;
+    --wall: #363A36; --shelf: #2B2F2C; --slab: #0C0D0C; --slab-edge: #000000; --slab-mark: #000000; --slab-light: rgba(240,238,231,0.16);
     --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: #8FBFC9; --rule: #343735;
-  --panel: #212422; --slab: #0E100F; --slab-edge: #000000;
+  --wall: #363A36; --shelf: #2B2F2C; --slab: #0C0D0C; --slab-edge: #000000; --slab-mark: #000000; --slab-light: rgba(240,238,231,0.16);
   --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
 }
 
@@ -69,8 +69,9 @@ p { margin: 0; }
 
 /* Header */
 .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 20px; }
-.lockup { display: inline-flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-size: 19px; letter-spacing: -0.01em; }
-.lockup svg { width: 30px; height: 30px; flex: 0 0 auto; }
+.lockup { display: inline-flex; align-items: center; color: var(--fg); text-decoration: none; font-size: 19px; letter-spacing: -0.03em; }
+.lockup svg { width: 30px; height: 30px; flex: 0 0 auto; margin-right: 6px; }
+.lockup span { margin-left: 0.16em; }
 .lockup b { font-weight: 600; }
 .lockup span { font-weight: 400; }
 .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px; }
@@ -83,9 +84,10 @@ p { margin: 0; }
 .hero-copy { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
 .hero-art { flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; }
-.shelf { width: 100%; max-width: 460px; aspect-ratio: 4 / 3; background: var(--panel); border-radius: 10px; position: relative; overflow: hidden; }
-.shelf::after { content: ""; position: absolute; left: 0; right: 0; bottom: 22%; border-top: 1px solid var(--rule); }
-.box { position: absolute; z-index: 1; left: 50%; bottom: 22%; transform: translateX(-50%); width: 48%; height: 10%; background: var(--slab); border-radius: 5px; box-shadow: 0 14px 28px rgba(0,0,0,0.22), inset 0 -2px 0 var(--slab-edge); display: flex; align-items: center; justify-content: flex-end; padding-right: 6%; }
+.shelf { width: 100%; max-width: 460px; aspect-ratio: 4 / 3; background: linear-gradient(var(--wall) 0 78%, var(--shelf) 78% 100%); border-radius: 10px; position: relative; overflow: hidden; }
+.shelf::after { content: ""; position: absolute; left: 0; right: 0; bottom: 22%; border-top: 1px solid rgba(0,0,0,0.12); }
+.box { position: absolute; z-index: 1; left: 50%; bottom: 22%; transform: translateX(-50%); width: 48%; height: 11%; background: var(--slab); border-radius: 5px; box-shadow: 0 16px 30px rgba(0,0,0,0.28), inset 0 -2px 0 var(--slab-edge); display: flex; align-items: center; justify-content: space-between; padding-inline: 6%; }
+.seal { height: 58%; width: auto; color: var(--slab-mark); filter: drop-shadow(0 1px 0 var(--slab-light)); }
 .light { width: 6px; height: 6px; border-radius: 3px; background: var(--signal); box-shadow: 0 0 8px 1px rgba(200,134,43,0.6); }
 
 /* Claims */
@@ -144,7 +146,7 @@ p { margin: 0; }
 <header class="wrap header" id="top">
   <a class="lockup" href="#top" aria-label="Orca Keel, home">
     <svg viewBox="0 0 240 240" aria-hidden="true"><path d="M58 25 C78 22 96 40 121 43 C177 47 214 84 216 132 C216 143 214 153 209 162 C177 139 146 126 116 128 C83 130 57 150 56 178 C56 189 60 199 67 208 C70 213 65 218 60 215 C35 198 20 171 21 139 C21 113 31 91 45 74 C58 58 65 43 58 25 Z M136 83 C149 78 168 85 180 97 C192 109 188 116 174 116 C161 116 144 108 137 99 C132 93 131 86 136 83 Z" fill="currentColor" fill-rule="evenodd"/></svg>
-    <b>Orca</b><span>Keel</span>
+    <b>orca</b><span>keel</span>
   </a>
   <nav class="nav" aria-label="Sections">
     <a href="#how">How it works</a>
@@ -167,7 +169,7 @@ p { margin: 0; }
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <div class="shelf"><div class="box"><div class="light"></div></div></div>
+      <div class="shelf"><div class="box"><svg class="seal" viewBox="0 0 240 240"><path d="M63 29 C82 29 96 42 122 45 C176 49 211 85 213 132 C213 143 211 151 207 158 C174 137 145 127 117 130 C83 133 59 153 59 180 C59 190 63 199 68 207 C71 212 66 216 61 213 C36 196 22 170 23 140 C23 114 34 92 48 74 C62 57 68 44 63 29 Z M132 80 C146 75 168 83 182 96 C195 109 190 120 175 120 C160 120 140 110 132 100 C126 92 126 83 132 80 Z" fill="currentColor" fill-rule="evenodd"/></svg><div class="light"></div></div></div>
     </div>
   </section>
 
