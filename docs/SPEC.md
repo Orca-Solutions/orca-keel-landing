@@ -20,6 +20,7 @@ One static page, `site/index.html`, for the family household, with the installer
 - Harbor palette, Instrument Sans for the product's voice, Newsreader for long copy. Tokens copied from `brand/kit/tokens/colors.css` into the page's `:root`. Light and dark themes; the installer's layer is Ink in both.
 - One file, no JavaScript, no forms, no third parties except Google Fonts. The CSP meta tag says exactly that.
 - Works at phone width without horizontal scroll; 1120 px column on desktop.
+- "Orca Keel" in full in the lockup, title, metadata, carton, footer line and the first mention on the page; "Keel" alone afterwards. Never "Keel by Orca".
 - The mark appears alone, as the head: in the lockup, the favicon and the footer. Never in a badge.
 - Every number on the page is either invented and labelled as an example (the water bill) or a placeholder in brackets.
 
