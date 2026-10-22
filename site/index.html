@@ -26,7 +26,7 @@
 
   --bg: var(--orca-paper); --surface: var(--orca-white); --fg: var(--orca-ink); --fg-2: var(--orca-stone);
   --accent: var(--orca-harbor); --rule: var(--orca-linen); --signal: var(--orca-amber);
-  --wall: #D8D3C6; --shelf: #E4E0D5; --slab: #232423; --slab-edge: #121312; --slab-mark: #0C0D0C; --slab-light: rgba(240,238,231,0.14);
+  --wall: #D8D3C6; --shelf: #E4E0D5; --slab: #232423; --slab-edge: #121312; --slab-mark: #0C0D0C; --slab-light: rgba(240,238,231,0.14); --daybook: #2C4F86;
   --dark-bg: var(--orca-ink); --dark-fg: var(--orca-paper); --dark-fg-2: var(--orca-paper-on-ink); --dark-rule: #3D3D3D;
 
   --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -36,13 +36,13 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: #8FBFC9; --rule: #343735;
-    --wall: #363A36; --shelf: #2B2F2C; --slab: #0C0D0C; --slab-edge: #000000; --slab-mark: #000000; --slab-light: rgba(240,238,231,0.16);
+    --wall: #363A36; --shelf: #2B2F2C; --slab: #0C0D0C; --slab-edge: #000000; --slab-mark: #000000; --slab-light: rgba(240,238,231,0.16); --daybook: #9DB8E6;
     --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #171A18; --surface: #212422; --fg: #F0EEE7; --fg-2: #CFCBC2; --accent: #8FBFC9; --rule: #343735;
-  --wall: #363A36; --shelf: #2B2F2C; --slab: #0C0D0C; --slab-edge: #000000; --slab-mark: #000000; --slab-light: rgba(240,238,231,0.16);
+  --wall: #363A36; --shelf: #2B2F2C; --slab: #0C0D0C; --slab-edge: #000000; --slab-mark: #000000; --slab-light: rgba(240,238,231,0.16); --daybook: #9DB8E6;
   --dark-bg: #0E100F; --dark-fg: #F0EEE7; --dark-fg-2: #CFCBC2; --dark-rule: #2E312F; color-scheme: dark;
 }
 
@@ -63,6 +63,10 @@ p { margin: 0; }
 .lead { font-family: var(--font-record); font-size: clamp(18px, 2vw, 21px); line-height: 1.4; }
 .record { font-family: var(--font-record); font-size: 17px; line-height: 1.45; }
 .caption { font-size: 13px; color: var(--fg-2); }
+.with-mark { display: flex; align-items: flex-start; gap: 16px; }
+.with-mark .lead { margin: 0; min-width: 0; }
+.mark { width: 32px; height: 32px; flex: 0 0 auto; margin-top: 0.15em; }
+.mark-daybook { color: var(--daybook); }
 .button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--fg); color: var(--bg); border-radius: 6px; font-weight: 500; font-size: 16px; text-decoration: none; }
 .button:hover { opacity: 0.9; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -129,8 +133,6 @@ p { margin: 0; }
 .stands { border-top: 1px solid var(--rule); }
 .stands .wrap { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px 48px; padding-block: 56px; }
 .stands-copy { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; max-width: 62ch; }
-.stands-aside { flex: 0 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
-.stands-aside a { word-break: break-word; }
 
 /* Footer */
 .footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding-block: 28px 44px; font-size: 13px; color: var(--fg-2); border-top: 1px solid var(--rule); }
@@ -195,9 +197,11 @@ p { margin: 0; }
     <div class="daybook-copy">
       <p class="label">Daybook</p>
       <h2 id="daybook-heading">The household's book, kept for you.</h2>
-      <p class="lead">Daybook is what you open on your phone. Photograph a letter, forward an email, or press the button and say it. Daybook files it, finds the deadline, and tells you what it needs. One adult in every house carries this in their head. Now the house does.</p>
+      <div class="with-mark">
+        <svg class="mark mark-daybook" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 54 H58" stroke-width="4"/><path d="M16 54 V29 L32 14 L48 29 V54" stroke-width="4.5"/></svg>
+        <p class="lead"><a href="https://daybook.orcasolutions.dev/">Daybook</a> is what you open on your phone. Photograph a letter, forward an email, or press the button and say it. Daybook files it, finds the deadline, and tells you what it needs. One adult in every house carries this in their head. Now the house does.</p>
+      </div>
       <p class="lead">Reading a letter or drafting a reply takes a model. Keel works with the ones you already know, Claude, ChatGPT or another provider you pick, and sends each one only the part of a matter the job needs, under the same rule as everything else: only what you allowed. The record, the deadlines and the reminders never need a model at all.</p>
-      <p class="caption">Daybook's line is <a href="https://daybook.orcasolutions.dev/">the house, written down</a>.</p>
     </div>
     <div class="daybook-card">
       <div class="matter" aria-label="An example matter in Daybook">
@@ -222,8 +226,10 @@ p { margin: 0; }
         <p class="label">For the installer</p>
         <h2 id="installer-heading">Not an agent with your passwords.</h2>
         <p class="lead">The other boxes ship a general agent with a shell, a browser and your logins, then put a fence around it. Keel has no shell for routines, no third-party skill store, and no microphone that listens on its own.</p>
-        <p class="lead">The layer that makes this hold is Diamond Dog, the studio's delegation-first environment. A routine gets a specific job, clear limits and a record of what happened. It cannot give itself more, and the record says what was seen, what was claimed, and what is still unknown.</p>
-        <p class="caption">Diamond Dog's line is <a href="https://diamonddog.orcasolutions.dev/">delegate work, not your identity</a>.</p>
+        <div class="with-mark">
+          <svg class="mark" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M80 40 H176 Q192 40 208 64 L240 112 Q248 128 232 140 L208 152 L184 128 L168 184 L128 224 L88 184 L72 128 L48 152 L24 140 Q8 128 16 112 L48 64 Q64 40 80 40 Z M64 64 L40 116 L64 100 L88 64 Z M192 64 L216 116 L192 100 L168 64 Z M92 100 A9 9 0 1 0 92 118 A9 9 0 1 0 92 100 Z M164 100 A9 9 0 1 0 164 118 A9 9 0 1 0 164 100 Z M128 136 L152 160 L128 184 L104 160 Z"/></svg>
+          <p class="lead">The layer that makes this hold is <a href="https://diamonddog.orcasolutions.dev/">Diamond Dog</a>, the studio's delegation-first environment. A routine gets a specific job, clear limits and a record of what happened. It cannot give itself more, and the record says what was seen, what was claimed, and what is still unknown.</p>
+        </div>
       </div>
       <ul class="installer-list">
         <li>No terminal, ever.</li>
@@ -254,12 +260,8 @@ p { margin: 0; }
     <div class="wrap">
       <div class="stands-copy">
         <p class="label">Where it stands</p>
-        <h2 id="stands-heading">In development.</h2>
-        <p class="record">Keel is being built in one house first. The first run will be small: [UNITS] households, shipping [DATE]. Pricing is not set and will not be guessed at here.</p>
-      </div>
-      <div class="stands-aside">
-        <p class="label">If you want one</p>
-        <p class="record">Write to <a href="mailto:jason@orcasolutions.dev">jason@orcasolutions.dev</a> and say a little about your house. We will write back when there is something to say.</p>
+        <h2 id="stands-heading">Coming soon.</h2>
+        <p class="record">Keel is being built in one house first. A waiting list will open here when it is ready for more. Nothing to sign up for yet.</p>
       </div>
     </div>
   </section>
