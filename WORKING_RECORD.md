@@ -2,6 +2,12 @@
 
 Current state, open tasks, verification and review dispositions. Newest first.
 
+## 2026-10-22: the sticky header and the setup line
+
+**State.** After #10 went live, Jason asked for the "Set up from your phone. About fifteen minutes." line to sit above the "Where it stands" button, and for the header bar to stay put while the page scrolls. The hero's action block is now a column: the caption first, the button under it. The header is a full-width bar that is sticky at desktop widths, carrying the keel line (moved off the body, so the 3 px of Depth stay at the top of the window), the page ground and a 1 px rule in the theme's rule tone; its padding is trimmed from 20 px to 16 px so the bar is 69 px tall. Section links land 88 px down, under the bar (`scroll-padding-top`). On phones (600 px and under) the bar is static: its two rows run to 129 px, a sixth of the screen, so pinning it would cost more than it gives. No copy changed. Deployed state before this change: #10, live 20:49.
+
+**Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors; the bar measured at 0 px from the top after scrolling, and the "How it works" link checked to land its section 19 px under the bar. Author check only.
+
 ## 2026-10-22: the waiting list on GitHub Issues
 
 **State.** Jason chose the public GitHub Issues list over waiting for an email address (decision card, 2026-10-22 20:32). The repository gains an issue form, `waiting-list.yml`, that says in its first lines that the issue is public, asks for one optional paragraph about the household (how many, roughly where, what Keel should handle first), and requires a tick that nothing private was left in; blank issues are off, and a "waiting list" label (Depth) marks them. The page's "Where it stands" section gains a "Join the waiting list" button to the template and a caption that the list is public and needs a GitHub account; the copy now says places on the first run go in list order, still with no dates or prices. Jason intends a refundable deposit for a place in line later, so early adopters have an advantage; that is logged for the product plan and not on the page.
