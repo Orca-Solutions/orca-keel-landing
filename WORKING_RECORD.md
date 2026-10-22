@@ -2,6 +2,14 @@
 
 Current state, open tasks, verification and review dispositions. Newest first.
 
+## 2026-10-22: the box, the lockup, the sibling marks and "coming soon"
+
+**State.** Jason asked for more contrast behind the box in the hero and the orca mark on its front. The panel is now a wall above a shelf (two warm neutrals in light mode, two greys in dark), and the box carries the Signal head debossed into its front: the slab's darker tone with a faint lit edge below, the eye a hole showing the slab, no badge (brand decision B-10). The brand thread re-exported the kit's lockups with a 0.16 em word gap and the head 22 units from the word, and Jason chose lowercase lettering for the lockup, matching the studio's; the kit copy in `brand/kit/` is refreshed from the plan set (lockups, mark PNGs, README) and the page's CSS lockup reads "orca keel" with the kit's spacing. Running copy keeps "Orca Keel".
+
+In the same round Jason asked for the sibling products' marks beside their paragraphs with the product name as the link (the "X's line is …" captions are gone), and for the "where it stands" section to say only "coming soon": no units, dates, price or placeholders, and no contact address until Keel has its own domain and email. He wants a waiting list that lives in this repository alone; with no server, scripts, forms or email, the only in-repo mechanism is GitHub Issues, which is public. A decision card put the choice to him; until he answers, the page says a waiting list will open. The Daybook mark is the kit's house on the line (`Orca-Solutions/daybook-landing`, `brand/marks/house-on-the-line.svg`) and the Diamond Dog mark is the kit's `diamond-dog-mark` (`Orca-Solutions/diamond-dog-landing`, `brand-kit/logos/`), both inlined.
+
+**Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors; the hero was checked at 2x in both themes. Routine design and copy; author check only.
+
 ## 2026-10-22: which models it works with
 
 **State.** Jason asked for a brief mention, as Otto's page has, of how the box works with Claude, ChatGPT and the like. The Daybook section gains one paragraph: reading and drafting take a model, the box works with Claude, ChatGPT or another provider the household picks, each provider gets only the part of a matter the job needs under a grant, and the record, deadlines and reminders need no model. The installer's list gains a seventh limit: no model runs on the box. Both follow the plan set (doc 08 R12, R13, R19; doc 05 OH7, no local inference). Who pays for model use (own keys or a service) is open (doc 05 Q11), so the page does not say.
@@ -25,7 +33,7 @@ The page has the hero, the three claims, the Daybook section with an example mat
 **Open tasks.**
 - Record the first deployment in `docs/handoffs/` once the custom domain's DNS check passes and HTTPS is enforced.
 - Jason replaces the `LICENSE` placeholder with the licence text he wants.
-- Fill `[UNITS]` and `[DATE]` when they exist. The contact address is jason@orcasolutions.dev (Jason, 2026-10-22). Pricing stays off the page until the pilot.
+- The waiting list: Jason decides the mechanism (GitHub Issues now, or a list once Keel has its own email). Units, dates and pricing stay off the page until Jason gives them.
 - Photography, when there is some. Until then the hero shows the flat Paper panel with the box drawn as a dark slab and the single amber dot.
 
 **Verification.** The page was rendered with headless Chromium at 1280 px and 390 px in light and dark mode before this push: no horizontal overflow, no console errors, both themes legible. No JavaScript, so nothing to syntax-check. The CSP meta tag allows only inline styles, the two Google Fonts hosts and same-origin images. Author verification only; routine copy and a static page need no independent review.
