@@ -22,6 +22,7 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 ### Changed
 
 - "Where it stands" says "coming soon" with no units, dates or placeholders.
+- The Daybook section is labelled "For the household", answering "For the installer"; its headline reads "The book of the house, kept for you."
 - The hero's wall-and-shelf panel is a Depth panel; the box sits on it with a shadow and its feet, the seal in Shallows.
 
 ### Removed
