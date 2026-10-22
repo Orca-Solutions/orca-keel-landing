@@ -2,6 +2,14 @@
 
 Current state, open tasks, verification and review dispositions. Newest first.
 
+## 2026-10-22: which models it works with
+
+**State.** Jason asked for a brief mention, as Otto's page has, of how the box works with Claude, ChatGPT and the like. The Daybook section gains one paragraph: reading and drafting take a model, the box works with Claude, ChatGPT or another provider the household picks, each provider gets only the part of a matter the job needs under a grant, and the record, deadlines and reminders need no model. The installer's list gains a seventh limit: no model runs on the box. Both follow the plan set (doc 08 R12, R13, R19; doc 05 OH7, no local inference). Who pays for model use (own keys or a service) is open (doc 05 Q11), so the page does not say.
+
+Jason also settled how the name is written (2026-10-22): "Orca Keel" in full where it stands alone or first appears on the page, "Keel" alone for every later mention and inside the product, never "Keel by Orca". Three later mentions on the page change to "Keel"; the rule is in CLAUDE.md and docs/SPEC.md.
+
+**Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors. Routine copy; author check only.
+
 ## 2026-10-22: GitHub Pages and the domain
 
 **State.** Jason enabled GitHub Pages (Source: GitHub Actions) and set the custom domain `orcakeel.orcasolutions.dev`; the DNS check was in progress when this was written. This change adds the canonical URL and `og:url` to the page, `site/CNAME` so the domain survives a redeploy, and the agreed values in `docs/DEVOPS.md`. DNS for the domain is a CNAME to `orca-solutions.github.io` on the studio's Cloudflare zone, set by Jason; "Enforce HTTPS" can be ticked once GitHub has issued the certificate.
