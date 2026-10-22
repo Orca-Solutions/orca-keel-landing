@@ -1,4 +1,5 @@
-/* Orca brand tokens · draft 0.2 · 2026-10-21
+/* Orca brand tokens · draft 0.5 · 2026-10-22 (the sea, B-13; Amber, B-14; Depth as Keel's color, B-15; Depth sections, the two-tone box drawing, Amber up to three points, B-16)
+   The family two-tone is Ink and Chalk (Paper); Orca Keel's accent is the sea; Amber is its one warm point.
    Harbor is the default theme. Add data-theme="workshop" on <html> for the alternative. */
 
 :root {
@@ -6,10 +7,12 @@
   --orca-paper:   #F0EEE7;  /* ground: the studio's Chalk */
   --orca-white:   #FFFFFF;  /* surface */
   --orca-ink:     #171A18;  /* text, the mark, the box: the studio's Ink */
-  --orca-harbor:  #1E5A66;  /* accent: one emphasis per screen */
+  --orca-harbor:  #1E5A66;  /* the sea, mid: links, selected states, one emphasis per screen */
+  --orca-shallows: #D8E6E4; /* the sea, light: lockup and text on dark grounds, the seal on the box, small panels; never a page ground */
+  --orca-depth:   #11404B;  /* the sea, dark, Keel's color: the keel line, the lockup on light grounds, the primary action, the dark band */
   --orca-stone:   #6B6760;  /* secondary text */
   --orca-linen:   #E2DFD6;  /* rules */
-  --orca-amber:   #C8862B;  /* the listening light only */
+  --orca-amber:   #C8862B;  /* the one warm point: the light; one period or arrow per page; never text or a fill */
   --orca-paper-on-ink: #CFCBC2;
   --orca-vermilion: #E65032;  /* the studio's accent; not on products */
 
@@ -21,6 +24,9 @@
   --accent:    var(--orca-harbor);
   --rule:      var(--orca-linen);
   --signal:    var(--orca-amber);
+  --keel:      var(--orca-depth);     /* Keel's color: lockup, line, primary action */
+  --action:    var(--orca-depth);     /* the primary button */
+  --action-fg: var(--orca-paper);
 
   /* type */
   --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -44,11 +50,23 @@
   --orca-white:  #FFFFFF;
   --orca-ink:    #111111;
   --orca-harbor: #111111;
+  --orca-shallows: #EDEDED;
+  --orca-depth:  #2A2A2A;
   --orca-stone:  #6A6A6A;
   --orca-linen:  #E6E6E6;
   --orca-amber:  #D8441C;
   --orca-paper-on-ink: #CFCFCF;
 }
+
+/* The sea. Depth is a section ground (the hero, one lower band) and the lockup, line and action on light grounds; Shallows is the
+   light on dark grounds (lockup, display text, the seal) and a panel surface; Harbor is links on light grounds and the box drawing's
+   surface or panel inside a Depth section. Shallows is never a page or section wash. */
+.orca-depth    { --bg: var(--orca-depth); --surface: #1A4A55; --fg: var(--orca-shallows); --fg-2: #A9C3C2; --accent: var(--orca-shallows); --rule: #245862; --action: var(--orca-shallows); --action-fg: var(--orca-depth); background: var(--bg); color: var(--fg); }
+.orca-panel    { --bg: var(--orca-shallows); --fg: var(--orca-ink); --fg-2: #4C6B70; --rule: #C4D4D1; background: var(--bg); color: var(--fg); border-radius: var(--radius-card); }
+.orca-harbor   { --bg: var(--orca-harbor); --fg: var(--orca-shallows); --fg-2: #BFD6D6; --rule: #2E6B78; background: var(--bg); color: var(--fg); border-radius: var(--radius-card); }  /* the box drawing's panel */
+
+/* The keel line: 3 px of Depth at the top of every Keel surface (page header, card, carton). Standard for Orca Keel. */
+.keel-line { border-top: 3px solid var(--orca-depth); }
 
 /* The installer's layer: Ink ground, Paper text */
 .orca-dark {
@@ -57,6 +75,7 @@
   --fg: var(--orca-paper);
   --fg-2: var(--orca-paper-on-ink);
   --rule: #3D3D3D;
+  --action: var(--orca-shallows); --action-fg: var(--orca-depth);  /* lockup and display text on Ink: Shallows */
   background: var(--bg);
   color: var(--fg);
 }
@@ -72,6 +91,8 @@ h3 { font-size: var(--title); line-height: 1.15; }
 .record, .body { font-family: var(--font-record); font-size: var(--body); line-height: 1.45; }
 .label { font-size: var(--label); font-weight: 500; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--fg-2); }
 .caption { font-size: var(--caption); color: var(--fg-2); }
-.button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--fg); color: var(--bg); border-radius: var(--radius-control); font-weight: 500; font-size: var(--ui); text-decoration: none; }
+.button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--action); color: var(--action-fg); border-radius: var(--radius-control); font-weight: 500; font-size: var(--ui); text-decoration: none; }
 .card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); }
 .light { width: 6px; height: 6px; border-radius: 3px; background: var(--signal); }
+.point { color: var(--signal); } /* an amber point: the final period of every section title (h1, h2), a status dot. Never text, a fill or a button */
+h1 .point, h2 .point { color: var(--signal); }
