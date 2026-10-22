@@ -17,10 +17,12 @@ Notable changes to the Orca Keel landing page. The format follows [Keep a Change
 - The hero panel as a wall and a shelf; the box larger, on two short feet, with the head in Paper on its front.
 - The lockup in lowercase with the kit's spacing; the kit copy refreshed (lowercase lockups, title-case kept as an alternate).
 - Daybook's and Diamond Dog's marks beside their paragraphs; the product names are the links.
+- The sea: the header and hero on Shallows (light) or Depth (dark), the box drawn on it, and the page closing on it under "Where it stands" and the footer. The kit copy refreshed to draft 0.4 (sea tokens, sea sheet, lockups on the sea, the box scene).
 
 ### Changed
 
 - "Where it stands" says "coming soon" with no units, dates or placeholders.
+- The hero's wall-and-shelf panel is gone; the box sits on the sea with a shadow and its feet.
 
 ### Removed
 

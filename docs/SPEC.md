@@ -6,13 +6,13 @@ One static page, `site/index.html`, for the family household, with the installer
 
 | Section | Carries | Source |
 | --- | --- | --- |
-| Header | Head + "orca keel" lockup, section links, the status "In development" | Kit lockups; sibling pages' candid status line |
-| Hero | "The household computer" label, the one-line claim, the sub, a link to where it stands, the flat panel: a wall above a shelf, the box as a dark slab on two short feet, the head in Paper on its front and one amber dot | Brief §3, §6, §7 imagery placeholder |
+| Header | Head + "orca keel" lockup, section links, the status "In development", on the sea with the hero | Kit lockups; sibling pages' candid status line |
+| Hero | "The household computer" label, the one-line claim, the sub, a link to where it stands, the box drawn on the sea: an Ink slab on two short feet, the head in Paper on its front, one amber dot, a shadow for the dimension | Brief §3, §6, §7 imagery placeholder; the sea, B-13; `brand/kit/scenes/` |
 | How it works | The three claims: it keeps the record, it does only what you said, it keeps working | Voice sheet |
 | Daybook | Daybook's house mark beside the paragraph, the name linked to daybook.orcasolutions.dev; what the app is, which models it works with (Claude, ChatGPT or another provider; cloud only, one task's worth, under a grant), an example matter with its grant | Voice sheet sample copy; plan docs 08 (R12, R13, R19) and OH7 |
 | For the installer | The dark layer: "Not an agent with your passwords", seven plain limits (the last: no model runs on the box), and Diamond Dog as the layer that makes them hold, its mark beside the paragraph and the name linked to diamonddog.orcasolutions.dev | Brief §2, §3, §4 |
 | In the carton | Four things: the box, the power cord, one card, the backup drive | Brief §8 |
-| Where it stands | "Coming soon." Built in one house first; a waiting list will open; no units, dates, price or address | Jason, 2026-10-22: no promises, no blanks, email waits for Keel's own domain |
+| Where it stands | "Coming soon." Built in one house first; a waiting list will open; no units, dates, price or address. The page's one further band of sea, shared with the footer | Jason, 2026-10-22: no promises, no blanks, email waits for Keel's own domain; brief §6 layout |
 | Footer | "Made by Orca. It started with a spreadsheet." Links to Daybook, Diamond Dog, the GitHub organisation | Brief §6 |
 
 ## Rules
@@ -22,6 +22,7 @@ One static page, `site/index.html`, for the family household, with the installer
 - Works at phone width without horizontal scroll; 1120 px column on desktop.
 - "Orca Keel" in full in the title, metadata, carton, footer line and the first mention on the page; "Keel" alone afterwards. Never "Keel by Orca". The lockup is lowercase, "orca keel", set live in CSS: "orca" at 600, "keel" at 400, 0.16 em apart, tracking -0.03 em, the head 6 px from the word.
 - The mark appears alone, as the head: in the lockup, the favicon and the footer. Never in a badge.
+- The sea (Shallows #D8E6E4 in light mode, Depth #11404B in dark) is a ground, never a fill: the header and hero at the top, and the "where it stands" section with the footer at the close. Nothing else sits on it; text, buttons and rules never take its colour. On Depth, links are Paper. The browser's theme colour follows it. Amber stays the box's light alone (B-14 allows one further point per page; the page uses none).
 - Every number on the page is invented and labelled as an example (the water bill). Nothing else is counted, dated or priced.
 - Sibling marks (Daybook's house, Diamond Dog's dog) appear once each, 32 px, beside the paragraph that names the product, in that product's own colour rules: Daybook's blue-black, Diamond Dog in Paper on Ink.
 

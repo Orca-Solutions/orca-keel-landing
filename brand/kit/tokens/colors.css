@@ -1,4 +1,5 @@
-/* Orca brand tokens · draft 0.2 · 2026-10-21
+/* Orca brand tokens · draft 0.3 · 2026-10-22 (the sea at three depths, B-13; Amber as the one point of contrast, B-14)
+   The family two-tone is Ink and Chalk (Paper); Orca Keel's accent is the sea; Amber is its one warm point.
    Harbor is the default theme. Add data-theme="workshop" on <html> for the alternative. */
 
 :root {
@@ -6,10 +7,12 @@
   --orca-paper:   #F0EEE7;  /* ground: the studio's Chalk */
   --orca-white:   #FFFFFF;  /* surface */
   --orca-ink:     #171A18;  /* text, the mark, the box: the studio's Ink */
-  --orca-harbor:  #1E5A66;  /* accent: one emphasis per screen */
+  --orca-harbor:  #1E5A66;  /* the sea, mid: links, selected states, one emphasis per screen */
+  --orca-shallows: #D8E6E4; /* the sea, light: a ground for hero and section bands, behind the box */
+  --orca-depth:   #11404B;  /* the sea, dark: the same grounds in dark mode */
   --orca-stone:   #6B6760;  /* secondary text */
   --orca-linen:   #E2DFD6;  /* rules */
-  --orca-amber:   #C8862B;  /* the listening light only */
+  --orca-amber:   #C8862B;  /* the one warm point: the light; one period or arrow per page; never text or a fill */
   --orca-paper-on-ink: #CFCBC2;
   --orca-vermilion: #E65032;  /* the studio's accent; not on products */
 
@@ -21,6 +24,7 @@
   --accent:    var(--orca-harbor);
   --rule:      var(--orca-linen);
   --signal:    var(--orca-amber);
+  --sea:       var(--orca-shallows);  /* becomes Depth in dark mode */
 
   /* type */
   --font-product: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -44,11 +48,21 @@
   --orca-white:  #FFFFFF;
   --orca-ink:    #111111;
   --orca-harbor: #111111;
+  --orca-shallows: #EDEDED;
+  --orca-depth:  #2A2A2A;
   --orca-stone:  #6A6A6A;
   --orca-linen:  #E6E6E6;
   --orca-amber:  #D8441C;
   --orca-paper-on-ink: #CFCFCF;
 }
+
+/* The sea: a ground, never a fill. Light mode rests on Shallows, dark mode on Depth.
+   Harbor is the accent on Shallows (6.0:1); on Depth, links are Paper (Harbor would be 1.5:1). */
+.orca-shallows { --bg: var(--orca-shallows); --surface: var(--orca-white); --fg: var(--orca-ink); --fg-2: var(--orca-stone); --accent: var(--orca-harbor); --rule: #C4D4D1; background: var(--bg); color: var(--fg); }
+.orca-depth    { --bg: var(--orca-depth); --surface: #1A4A55; --fg: var(--orca-paper); --fg-2: #A9C3C2; --accent: var(--orca-paper); --rule: #245862; background: var(--bg); color: var(--fg); }
+@media (prefers-color-scheme: dark) { .orca-sea { --bg: var(--orca-depth); --surface: #1A4A55; --fg: var(--orca-paper); --fg-2: #A9C3C2; --accent: var(--orca-paper); --rule: #245862; } }
+@media (prefers-color-scheme: light) { .orca-sea { --bg: var(--orca-shallows); --surface: var(--orca-white); --fg: var(--orca-ink); --fg-2: var(--orca-stone); --accent: var(--orca-harbor); --rule: #C4D4D1; } }
+.orca-sea { background: var(--bg); color: var(--fg); }
 
 /* The installer's layer: Ink ground, Paper text */
 .orca-dark {
@@ -75,3 +89,4 @@ h3 { font-size: var(--title); line-height: 1.15; }
 .button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--fg); color: var(--bg); border-radius: var(--radius-control); font-weight: 500; font-size: var(--ui); text-decoration: none; }
 .card { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); }
 .light { width: 6px; height: 6px; border-radius: 3px; background: var(--signal); }
+.point { color: var(--signal); } /* the one amber point on a page: a headline's period, a link's arrow */

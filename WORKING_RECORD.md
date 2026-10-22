@@ -2,6 +2,12 @@
 
 Current state, open tasks, verification and review dispositions. Newest first.
 
+## 2026-10-22: the sea
+
+**State.** Jason chose colour for the identity in the brand thread (brief B-13): Shallows #D8E6E4 as the light-mode ground and Depth #11404B as the dark-mode ground, Harbor unchanged as the accent, the sea a ground and never a fill, the hero on it and at most one more band per page. He asked for the box set against it and the colours through the site, minimal and tasteful, and for design judgment on top of his calls. The page now opens on the sea (header and hero, the lockup Ink or Chalk on it) and closes on it ("Where it stands" and the footer); everything between stays Paper, the white claims band and the installer's Ink. The hero's wall-and-shelf panel is gone, since the sea is the ground now: the box is an Ink slab with the kit scene's finish and shadow, kept on its feet with the Paper seal and the amber light, a little larger than before. On Depth the box is tone on tone and the shadow does the separating, as the brief anticipates. The browser's theme colour follows the sea. Links on Depth are Paper, per the kit. Amber stays the box's light alone; B-14 allows one further point per page, and none is used. The kit copy is refreshed to draft 0.4 (tokens, sea sheet, lockups on the sea, the box scene), still without the Signal source package.
+
+**Verification.** Rendered with headless Chromium at 1280 px and 390 px in light and dark mode: no horizontal overflow, no console errors; hero checked at 2x in both themes. Author check only.
+
 ## 2026-10-22: the box, larger, on feet, with the seal in Paper
 
 **State.** After seeing the page live, Jason asked for the seal in the sand colour against the black of the box, a bigger box, and stubby legs for some dimension off the surface. The seal is now Paper (#F0EEE7, the kit's allowed colour for the head on Ink; the wall's sand tone is not one of the mark's colours), the deboss is gone, the box is 60% of the panel wide and 14% tall, and two feet in the slab's edge tone lift it 8 px off the shelf line. No copy changed.
