@@ -152,6 +152,8 @@ p { margin: 0; }
 .stands { border-top: 1px solid var(--rule); }
 .stands .wrap { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px 48px; padding-block: 56px; }
 .stands-copy { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; max-width: 62ch; }
+.stands-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 8px; }
+.stands-actions .caption { flex: 1 1 260px; min-width: 0; }
 
 /* Footer, on Ink: the lockup in Shallows, the studio line, the links */
 .footer-band { background: var(--ink-band); color: var(--orca-paper-on-ink); --mark: var(--orca-shallows); --lockup: var(--orca-shallows); --accent: var(--orca-shallows); --tile-edge: #2C6370; }
@@ -291,7 +293,11 @@ p { margin: 0; }
       <div class="stands-copy">
         <p class="label">Where it stands</p>
         <h2 id="stands-heading">Coming soon<span class="point">.</span></h2>
-        <p class="record">Keel is being built in one house first. A waiting list will open here when it is ready for more. Nothing to sign up for yet.</p>
+        <p class="record">Keel is being built in one house first. Places on the first run go in the order of the waiting list. No dates and no prices yet.</p>
+        <div class="stands-actions">
+          <a class="button" href="https://github.com/Orca-Solutions/orca-keel-landing/issues/new?template=waiting-list.yml">Join the waiting list</a>
+          <p class="caption">The list is a public GitHub issue and needs a GitHub account. Say only what you are glad for anyone to read.</p>
+        </div>
       </div>
     </div>
   </section>
