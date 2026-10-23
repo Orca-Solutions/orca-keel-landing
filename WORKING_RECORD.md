@@ -2,6 +2,12 @@
 
 Current state, open tasks, verification and review dispositions. Newest first.
 
+## 2026-10-23: the favicon matches the header's tile
+
+**State.** Jason asked for the favicon to match the logo in the header's corner, colours and all. It had been the kit's micro cut (the larger patch, softer dorsal) on the Depth square; the header's tile uses the primary cut. The favicon is now the tile exactly: the primary cut in Paper at 70% of the Depth square, radius 23.4%, and in dark mode the same inset edge the tile has (#2C6370), through a media query inside the SVG. Safari does not take SVG icons, so `favicon.ico` (16, 32, 48) and `apple-touch-icon.png` (180) are rendered from the SVG in headless Chromium and linked before it; both are the light form. The kit's rule of the micro cut for 16 to 31 px is set aside here on Jason's call; at 16 px the primary cut still reads as the head. Deployed state before this change: #11, live 2026-10-22 21:07.
+
+**Verification.** The tile and the SVG icon rendered side by side at 34 px and 16 px in light and dark mode, identical to the eye; the ICO checked to hold its three sizes; page rendered at 1280 px and 390 px in light and dark mode with no overflow or console errors. Author check only. Browsers cache favicons hard: a reload with the cache emptied, or a new profile, may be needed to see the change.
+
 ## 2026-10-22: the sticky header and the setup line
 
 **State.** After #10 went live, Jason asked for the "Set up from your phone. About fifteen minutes." line to sit above the "Where it stands" button, and for the header bar to stay put while the page scrolls. The hero's action block is now a column: the caption first, the button under it. The header is a full-width bar that is sticky at desktop widths, carrying the keel line (moved off the body, so the 3 px of Depth stay at the top of the window), the page ground and a 1 px rule in the theme's rule tone; its padding is trimmed from 20 px to 16 px so the bar is 69 px tall. Section links land 88 px down, under the bar (`scroll-padding-top`). On phones (600 px and under) the bar is static: its two rows run to 129 px, a sixth of the screen, so pinning it would cost more than it gives. No copy changed. Deployed state before this change: #10, live 20:49.
