@@ -1,31 +1,32 @@
 # Orca Keel landing page: specification
 
-One static page, `site/index.html`, for the family household, with the installer's layer one level down. Content follows the Orca brand brief (approved by Jason, October 21, 2026) and the voice sheet in `brand/kit/`.
+One static page, `site/index.html`, for the household, with the installer's layer one level down. The current creative candidate is described in `WORKING_RECORD.md` (2026-10-23); publication follows Jason's acceptance and merge. Content follows the approved Orca brand kit and existing public product description.
 
 ## Sections, in order
 
-| Section | Carries | Source |
-| --- | --- | --- |
-| Header | A bar that stays at the top of the window on desktop widths (static on phones, where its two rows would cover a sixth of the screen): the keel line, the head in Paper on a Depth tile + "orca keel" lockup in Depth, section links, the status "In development" with an amber dot | Kit lockups; sibling pages' candid status line |
-| Hero | "The household computer" label, the one-line claim, the sub, the setup line ("Set up from your phone. About fifteen minutes.") above a link to where it stands, on the Depth band: the headline's period in Amber, the box drawn in Ink on a Shallows surface against a Harbor wall (a low slab on two short feet, the head in Shallows on its front, one amber dot, a shadow on the surface, a shelf edge where floor meets wall, a hairline outline lifting the panel off the band, the feet a hair clear of the box; Jason's scene, 2026-10-22), the caption "Prototype photo coming soon.", the button in Shallows | Brief §3, §6, §7 imagery placeholder; the sea, B-13; Amber, B-14; `brand/kit/scenes/` |
-| How it works | The three claims: it keeps the record, it does only what you said, it keeps working | Voice sheet |
-| Daybook | Label "For the household", headline "Calendar, reminders, notes and ideas, kept for you."; Daybook's house mark beside the paragraph, the name linked to daybook.orcasolutions.dev; what the app is, which models it works with (Claude, ChatGPT or another provider; cloud only, one task's worth, under a grant), an example matter with its grant | Voice sheet sample copy; plan docs 08 (R12, R13, R19) and OH7 |
-| For the installer | The dark layer: "Not an agent with your passwords", seven plain limits (the last: no model runs on the box), and Diamond Dog as the layer that makes them hold, its mark beside the paragraph and the name linked to diamonddog.orcasolutions.dev | Brief §2, §3, §4 |
-| In the carton | Four things: the box, the power cord, one card, the backup drive | Brief §8 |
-| Where it stands | "Coming soon." with the period in Amber, on Paper after the carton's white band; built in one house first, places go in list order; a "Join the waiting list" button to the public GitHub issue template, with a caption saying it is public and needs an account; no units, dates, price or address | Jason, 2026-10-22: no promises, no blanks, email waits for Keel's own domain |
-| Footer | On Ink: the lockup in Shallows, the studio line, "Also from the studio" links to Daybook, Diamond Dog and the GitHub organisation, a closing line (in development, nothing collected) | Brief §6 |
+| Section | Carries |
+| --- | --- |
+| Header | Desktop sticky bar with the keel line, Paper head on Depth tile, lowercase lockup, section links and “In development” status. Static at 760 px and below. A keyboard skip link precedes it. |
+| Hero | “The household computer”; the mental-load benefit; what Keel is; the phone setup line above “Where it stands” and “See how it works”. The illustrative household record and box form one portrait: Paper record, Harbor wall, Shallows shelf, Ink box and Shallows seal, Amber light. Caption labels it as illustration and invented examples. A short strip names record ownership, explicitly allowed actions and local reminders. |
+| How it works | Three steps: capture a letter/email/spoken note into Daybook; understand the matter/deadline/next action; give a specific grant. Sources: the previous public page and kit voice sheet. |
+| For the household | Daybook's calendar, reminders, notes and ideas. An illustrative water-bill matter keeps source, amount and grant together. The grant's purpose, cap and expiry are separately legible. Plain files on the household's drive. Below: model choice (Claude, ChatGPT or another provider), limited per-job disclosure under a grant, no local inference, record/deadlines/reminders independent of a model. |
+| For the installer | The second Depth band. Specific grants and traceable actions; no shell for routines or third-party skill store at launch; local filing/reminders/deadlines; planned rollback and backup; press-to-listen and phone pairing with no public ports. Diamond Dog's existing mark and landing-page link explain the underlying limits. |
+| In the carton | The box, power cord, one card and backup drive. Setup remains about fifteen minutes; the product is in development. No unmeasured electricity comparison. |
+| Where it stands | Built in one house first; intended-product status; no dates or prices. The existing waiting-list link opens a public GitHub issue template, with the public/account-required disclosure beside it. |
+| Footer | Ink ground, Shallows lockup, studio origin, sibling landing pages and the GitHub organisation. |
 
-## Rules
+## Presentation rules
 
-- Harbor palette, Instrument Sans for the product's voice, Newsreader for long copy. Tokens copied from `brand/kit/tokens/colors.css` into the page's `:root`. Light and dark themes; the installer's layer is Ink in both.
-- One file, no JavaScript, no forms, no third parties except Google Fonts. The CSP meta tag says exactly that.
-- Works at phone width without horizontal scroll; 1120 px column on desktop.
-- "Orca Keel" in full in the title, metadata, carton, footer line and the first mention on the page; "Keel" alone afterwards. Never "Keel by Orca". The lockup is lowercase, "orca keel", set live in CSS: "orca" at 600, "keel" at 400, 0.16 em apart, tracking -0.03 em, the head 6 px from the word.
-- The mark appears alone, as the head: in the lockup, the favicon and the footer. Never in a badge.
-- Depth #11404B is Keel's colour: the keel line, the lockup and the head on light grounds, the button, the head's tile, and the page's two dark bands (the hero, the installer's layer) in both modes; inside the hero the Ink box stands on a Shallows surface against a Harbor wall. On dark grounds the lockup, display text, the marks, links and the button are Shallows #D8E6E4. Shallows is never a page ground. The page's rhythm: Paper header, Depth hero, white claims band, Paper Daybook, Depth installer, white carton band, Paper "where it stands", Ink footer. Amber: the box's light, the final period of every section headline, as on the studio's site, and the dots on the status and on the grant (Jason asked for a few points of pop, 2026-10-22).
-- Every number on the page is invented and labelled as an example (the water bill). Nothing else is counted, dated or priced.
-- Sibling marks (Daybook's house, Diamond Dog's dog) appear once each, 32 px, beside the paragraph that names the product, in that product's own colour rules: Daybook's blue-black, Diamond Dog in Paper on Ink.
+- The existing sea palette and two Depth bands remain. Paper and white are the light-mode page surfaces; Ink and dark surfaces serve dark mode. Shallows is never a page-wide wash. Amber marks the hardware light, the final period of each section headline, the development-status dot and the grant dot.
+- Instrument Sans is the product voice; Newsreader is the record and long-copy voice. The hero's second sentence uses Newsreader as a deliberate editorial treatment. No new fonts.
+- The content column is capped at 1248 px. At 760 px and below, paired sections stack and the header stops sticking. The hardware illustration uses content-driven height; its record stays clear of the box even when text wraps.
+- Primary and secondary marks retain the approved geometry and colours. The icon exception allows the existing header/footer tiles. The separate favicon work is not part of this change.
+- “Orca Keel” in standalone positions and the first running mention; “Keel” thereafter. The lockup stays lowercase with the kit spacing.
+- Examples are synthetic, explicitly labelled, and not represented as shipped product screenshots. The page describes an in-development product, not verified implementation.
+- Power-loss and failed-update guarantees are not absolute: explain local operation, planned rollback and the backup drive. No guessed performance, price, shipping date or production count.
 
-## Not in scope
+## Runtime and boundaries
 
-Photography, a form or list, prices, a second page, analytics, a domain. Each is an open task in WORKING_RECORD.md or a decision for Jason.
+Static HTML/CSS only, no JavaScript, analytics, forms or embeds. Google Fonts remains the only runtime third party. Existing CSP, canonical URL, headers and deployment workflow are unchanged. The waiting list remains the Jason-approved GitHub issue template; no live household/product endpoint is linked.
+
+Photography, product functionality, signup infrastructure, prices, domain/hosting changes and new pages are outside this creative pass.
